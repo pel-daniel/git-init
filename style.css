@@ -41,6 +41,13 @@ html, body, .container {
   width: 33%;
 }
 
+.area-title {
+  border-bottom: 2px solid #303030;
+  color: #303030;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
 .hidden {
   display: none;
 }
