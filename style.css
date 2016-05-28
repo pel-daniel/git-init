@@ -61,7 +61,7 @@ div {
   width: 100%;
 }
 
-.git-command {
+.bash-command {
   background-color: green;
   cursor: pointer;
   display: inline-block;
