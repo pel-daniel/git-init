@@ -5,8 +5,11 @@ html, body, .container {
   width: 100%;
 }
 
-#app {
+div {
   box-sizing: border-box;
+}
+
+#app {
   height: 100%;
   padding-left: 250px;
   padding-top: 70px;
@@ -15,7 +18,6 @@ html, body, .container {
 
 #header {
   background-color: lightgray;
-  box-sizing: border-box;
   left: 0;
   height: 70px;
   padding: 10px;
@@ -24,7 +26,7 @@ html, body, .container {
   width: 100%;
 }
 
-#instructions {
+#side-bar {
   bottom: 0;
   left: 0;
   position: fixed;
@@ -35,7 +37,6 @@ html, body, .container {
 .area {
   background-color: grey;
   border: 2px solid #303030;
-  box-sizing: border-box;
   display: inline-block;
   float: left;
   height: 0%;
@@ -50,6 +51,14 @@ html, body, .container {
   margin: 0;
   margin-bottom: 10px;
   padding-bottom: 5px;
+}
+
+.console {
+  background-color: black;
+  color: white;
+  height: 50%;
+  padding: 5px;
+  width: 100%;
 }
 
 .git-command {
@@ -70,4 +79,10 @@ html, body, .container {
 
 .hidden {
   display: none;
+}
+
+.instructions {
+  height: 50%;
+  padding: 5px;
+  width: 100%;
 }
