@@ -15,6 +15,12 @@ var commands = [
       fileName: fileName
     },
     output: null
+  },
+  {
+    animation: gitAdd,
+    command: 'git add ' + fileName,
+    $element: '#git-add',
+    output: null
   }
 ]
 
@@ -31,6 +37,15 @@ function animateCommand(command) {
 
     command.animation(command)
   }
+}
+
+function gitAdd() {
+  var $file = $('.file')
+  var width = $('.area').outerWidth(true)
+
+  $file.animate({ left: width + 'px' }, 700, function() {
+    $('.file').remove().css('left', 0).appendTo('#staging')
+  })
 }
 
 function gitInit() {
