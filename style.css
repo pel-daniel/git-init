@@ -33,10 +33,13 @@ html, body, .container {
 }
 
 .area {
+  background-color: grey;
+  border: 2px solid #303030;
   box-sizing: border-box;
   display: inline-block;
   float: left;
-  height: 100%;
+  height: 0%;
+  margin-right: 3px;
   padding: 20px;
   width: 33%;
 }
@@ -45,11 +48,15 @@ html, body, .container {
   border-bottom: 2px solid #303030;
   color: #303030;
   margin: 0;
+  margin-bottom: 10px;
   padding-bottom: 5px;
 }
 
-.hidden {
-  display: none;
+.git-command {
+  background-color: green;
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px;
 }
 
 .file {
@@ -59,4 +66,8 @@ html, body, .container {
   position: relative;
   transition: transform 0.5s;
   width: 40px;
+}
+
+.hidden {
+  display: none;
 }
