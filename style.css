@@ -69,12 +69,9 @@ div {
 }
 
 .file {
-  background-color: tomato;
-  display: inline-block;
-  height: 40px;
+  background-color: mediumseagreen;
+  line-height: 30px;
   position: relative;
-  transition: transform 0.5s;
-  width: 40px;
 }
 
 .hidden {
