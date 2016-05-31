@@ -35,7 +35,7 @@ function animateCommand(command) {
     e.preventDefault()
     e.stopPropagation()
 
-    command.animation(command)
+    command.animation(command.payload)
   }
 }
 
@@ -54,8 +54,8 @@ function gitInit() {
   })
 }
 
-function touchFile(command) {
-  var $file = createFileHtml(command.payload.fileName)
+function touchFile(payload) {
+  var $file = createFileHtml(payload.fileName)
   $file.appendTo('#workingDir')
   $file.fadeIn()
 }
