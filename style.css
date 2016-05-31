@@ -54,18 +54,27 @@ div {
 }
 
 .commit {
+  border-left: 3px solid darkcyan;
+  margin-left: 11px;
+  padding-bottom: 10px;
   position: relative;
+}
+
+.commit:last-child {
+  border-left: 3px solid rgba(0, 0, 0, 0);
 }
 
 .commit-message {
   margin: 0;
+  margin-left: 12px;
 }
 
 .commit-node {
   background-color: darkcyan;
   display: inline-block;
   float: left;
-  margin-right: 5px;
+  left: -12px;
+  position: relative;
 }
 
 .console {
