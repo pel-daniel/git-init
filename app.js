@@ -1,4 +1,5 @@
 var fileName = 'tasks.txt'
+var message1 = 'Add file ' + fileName
 
 var commands = [
   {
@@ -20,6 +21,15 @@ var commands = [
     animation: gitAdd,
     command: 'git add ' + fileName,
     $element: '#git-add',
+    output: null
+  },
+  {
+    animation: gitCommit,
+    command: 'git commit -m "' + message1 + '"',
+    $element: '#git-commit',
+    payload: {
+      message: message1
+    },
     output: null
   }
 ]
@@ -44,8 +54,36 @@ function gitAdd() {
   var width = $('.area').outerWidth(true)
 
   $file.animate({ left: width + 'px' }, 700, function() {
-    $('.file').remove().css('left', 0).appendTo('#staging')
+    $file.remove().css('left', 0).appendTo('#staging')
   })
+}
+
+function gitCommit(payload) {
+  var $staging = $('#staging')
+  var $commit = createCommitHtml(
+    payload.message,
+    $staging.height(),
+    $staging.width()
+  )
+
+  $staging.empty().append($commit)
+
+  $commit.find('.commit-node').animate(
+    {
+      'border-radius': '50%',
+      height: '22px',
+      width: '22px'
+    },
+    500,
+    function() {
+      var width = $('.area').outerWidth(true)
+
+      $commit.delay(400).animate({ left: width + 'px' }, 700, function() {
+        $commit.remove().css('left', 0).appendTo('#commit-area')
+        $commit.find('.commit-message').delay(400).fadeIn(400)
+      })
+    }
+  )
 }
 
 function gitInit() {
@@ -62,4 +100,15 @@ function touchFile(payload) {
 
 function createFileHtml(fileName) {
   return $('<div/>', { class: 'file hidden', text: fileName })
+}
+
+function createCommitHtml(message, height, width) {
+  var $commitNode = $('<span/>', {
+    class: 'commit-node',
+    height: height,
+    width: width
+  })
+  var $message = $('<p/>', { class: 'commit-message hidden', text: message })
+
+  return $('<div/>', { class: 'commit' }).append($commitNode).append($message)
 }

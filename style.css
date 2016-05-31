@@ -53,6 +53,21 @@ div {
   padding-bottom: 5px;
 }
 
+.commit {
+  position: relative;
+}
+
+.commit-message {
+  margin: 0;
+}
+
+.commit-node {
+  background-color: darkcyan;
+  display: inline-block;
+  float: left;
+  margin-right: 5px;
+}
+
 .console {
   background-color: black;
   color: white;
