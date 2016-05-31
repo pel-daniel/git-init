@@ -40,7 +40,7 @@ function animateCommand(command) {
 }
 
 function gitAdd() {
-  var $file = $('.file')
+  var $file = $('#workingDir > .file')
   var width = $('.area').outerWidth(true)
 
   $file.animate({ left: width + 'px' }, 700, function() {
