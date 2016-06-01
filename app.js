@@ -54,7 +54,14 @@ function animateCommand(command) {
     e.preventDefault()
     e.stopPropagation()
 
-    command.animation(command.payload)
+    var $commandGroup = $('.console-command-group:last-child')
+    var $consoleCommand = createCommandHtml(command)
+
+    $consoleCommand.
+      appendTo($commandGroup.find('.console-command')).
+      fadeIn(400, function() {
+        command.animation(command.payload)
+      })
   }
 }
 
@@ -130,4 +137,8 @@ function createCommitHtml(message, height, width) {
 
 function createSpacerHtml() {
   return $('<div/>', { class: 'hidden', height: 32 })
+}
+
+function createCommandHtml(command) {
+  return $('<span/>', { text: command.command }).hide()
 }
