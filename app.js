@@ -77,9 +77,15 @@ function gitCommit(payload) {
     500,
     function() {
       var width = $('.area').outerWidth(true)
+      var $commitArea = $('#commit-area')
+
+      var $spacer = createSpacerHtml()
+
+      $spacer.delay(400).prependTo($commitArea).slideDown(700)
 
       $commit.delay(400).animate({ left: width + 'px' }, 700, function() {
-        $commit.remove().css('left', 0).appendTo('#commit-area')
+        $spacer.remove()
+        $commit.css('left', 0).prependTo($commitArea)
         $commit.find('.commit-message').delay(400).fadeIn(400)
       })
     }
@@ -111,4 +117,8 @@ function createCommitHtml(message, height, width) {
   var $message = $('<p/>', { class: 'commit-message hidden', text: message })
 
   return $('<div/>', { class: 'commit' }).append($commitNode).append($message)
+}
+
+function createSpacerHtml() {
+  return $('<div/>', { class: 'hidden', height: 32 })
 }

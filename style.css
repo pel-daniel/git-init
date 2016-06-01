@@ -60,6 +60,12 @@ div {
   position: relative;
 }
 
+.commit:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .commit:last-child {
   border-left: 3px solid rgba(0, 0, 0, 0);
 }
