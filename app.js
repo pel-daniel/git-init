@@ -9,7 +9,7 @@ var commands = [
     output: 'Initialized repo'
   },
   {
-    animation: touchFile,
+    animation: modifyFile,
     command: 'touch ' + fileName,
     $element: '#touch',
     payload: {
@@ -29,6 +29,15 @@ var commands = [
     $element: '#git-commit',
     payload: {
       message: message1
+    },
+    output: null
+  },
+  {
+    animation: modifyFile,
+    command: 'echo "Buy milk!" >> ' + fileName,
+    $element: '#echo',
+    payload: {
+      fileName: fileName
     },
     output: null
   }
@@ -98,7 +107,7 @@ function gitInit() {
   })
 }
 
-function touchFile(payload) {
+function modifyFile(payload) {
   var $file = createFileHtml(payload.fileName)
   $file.appendTo('#workingDir')
   $file.fadeIn()
