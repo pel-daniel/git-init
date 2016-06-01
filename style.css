@@ -101,6 +101,7 @@ div {
 .file {
   background-color: mediumseagreen;
   line-height: 30px;
+  margin-bottom: 10px;
   position: relative;
 }
 
