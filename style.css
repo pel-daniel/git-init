@@ -53,6 +53,13 @@ div {
   padding-bottom: 5px;
 }
 
+.command-trigger {
+  background-color: green;
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px;
+}
+
 .commit {
   border-left: 3px solid darkcyan;
   margin-left: 11px;
@@ -89,13 +96,6 @@ div {
   height: 50%;
   padding: 5px;
   width: 100%;
-}
-
-.bash-command {
-  background-color: green;
-  cursor: pointer;
-  display: inline-block;
-  padding: 3px;
 }
 
 .file {
