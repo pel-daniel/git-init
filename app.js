@@ -66,6 +66,10 @@ function animateCommand(command) {
       return command.animation(command.payload)
     }).then(function() {
       return showCommandOutput(command)
+    }).catch(function() {
+      return new Promise(function(resolve, reject) {
+        appendNewPrompt(resolve)
+      })
     })
   }
 }
@@ -123,6 +127,10 @@ function gitAdd() {
   var $file = $('#workingDir > .file')
   var width = $('.area').outerWidth(true)
 
+  if($file.length == 0) {
+    return Promise.reject()
+  }
+
   return new Promise(function(resolve, reject) {
     $file.animate({ left: width + 'px' }, 700, function() {
       $(this).remove().css('left', 0).appendTo('#staging')
@@ -133,6 +141,11 @@ function gitAdd() {
 
 function gitCommit(payload) {
   var $staging = $('#staging')
+
+  if($staging.children().length == 0) {
+    return Promise.reject()
+  }
+
   var $commit = createCommitHtml(
     payload,
     $staging.height(),
