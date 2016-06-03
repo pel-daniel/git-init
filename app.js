@@ -140,7 +140,7 @@ function modifyFile(payload) {
 }
 
 function createFileHtml(fileName) {
-  return $('<div/>', { class: 'file hidden', text: fileName })
+  return $('<div/>', { class: 'file', text: fileName }).hide()
 }
 
 function createCommitHtml(message, height, width) {
@@ -149,13 +149,13 @@ function createCommitHtml(message, height, width) {
     height: height,
     width: width
   })
-  var $message = $('<p/>', { class: 'commit-message hidden', text: message })
+  var $message = $('<p/>', { class: 'commit-message', text: message }).hide()
 
   return $('<div/>', { class: 'commit' }).append($commitNode).append($message)
 }
 
 function createSpacerHtml() {
-  return $('<div/>', { class: 'hidden', height: 32 })
+  return $('<div/>', { height: 32 }).hide()
 }
 
 function createCommandHtml(command) {
