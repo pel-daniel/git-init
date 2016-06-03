@@ -1,12 +1,13 @@
 var fileName = 'tasks.txt'
 var message1 = 'Add file ' + fileName
+var commitHash1 = 'cc04c1f'
 
 var commands = [
   {
     animation: gitInit,
     command: 'git init',
     $element: '#git-init',
-    output: 'Initialized repo'
+    output: 'Initialized empty git repository in my_dir/.git/'
   },
   {
     animation: modifyFile,
@@ -28,9 +29,12 @@ var commands = [
     command: 'git commit -m "' + message1 + '"',
     $element: '#git-commit',
     payload: {
+      hash: commitHash1,
       message: message1
     },
-    output: null
+    output: '[master (root-commit) ' + commitHash1 + '] Add file ' + fileName +
+      '\n 1 file changed, 0 insertions(+), 0 deletions(-)' +
+      '\n create mode 100644 ' + fileName
   },
   {
     animation: modifyFile,
@@ -68,11 +72,11 @@ function animateCommand(command) {
 
 function showCommand(command) {
   var $consoleCommand = createCommandHtml(command)
-  var $commandGroup = $('.console-command-group:last-child')
+  var $commandGroup = $('.console-command-group:last-child .console-command')
 
   return new Promise(function(resolve, reject) {
     $consoleCommand.
-      appendTo($commandGroup.find('.console-command')).
+      appendTo($commandGroup).
       fadeIn(400, function() {
         resolve()
       })
@@ -80,13 +84,33 @@ function showCommand(command) {
 }
 
 function showCommandOutput(command) {
-  var $newCommandGroup = createCommandGroupHtml()
+  var $commandGroup = $('.console-command-group:last-child .console-command')
 
   return new Promise(function(resolve, reject) {
-    $newCommandGroup.appendTo('.console').fadeIn(400, function() {
+    if(command.output) {
+      var $commandOutput = createCommandOutputHtml(command)
+
+      $commandOutput.
+        delay(400).
+        appendTo($commandGroup).
+        fadeIn(400, function() {
+          appendNewPrompt(resolve)
+        })
+    } else {
+      appendNewPrompt(resolve)
+    }
+  })
+}
+
+function appendNewPrompt(resolve) {
+  var $newCommandGroup = createCommandGroupHtml()
+
+  $newCommandGroup.
+    delay(400).
+    appendTo('.console').
+    fadeIn(400, function() {
       resolve()
     })
-  })
 }
 
 function gitAdd() {
@@ -104,7 +128,7 @@ function gitAdd() {
 function gitCommit(payload) {
   var $staging = $('#staging')
   var $commit = createCommitHtml(
-    payload.message,
+    payload,
     $staging.height(),
     $staging.width()
   )
@@ -163,13 +187,17 @@ function createFileHtml(fileName) {
   return $('<div/>', { class: 'file', text: fileName }).hide()
 }
 
-function createCommitHtml(message, height, width) {
+function createCommitHtml(payload, height, width) {
   var $commitNode = $('<span/>', {
     class: 'commit-node',
     height: height,
     width: width
   })
-  var $message = $('<p/>', { class: 'commit-message', text: message }).hide()
+  var $message =
+    $('<p/>', {
+      class: 'commit-message',
+      text: payload.hash + ' ' + payload.message
+    }).hide()
 
   return $('<div/>', { class: 'commit' }).append($commitNode).append($message)
 }
@@ -187,4 +215,8 @@ function createCommandGroupHtml() {
   var $consoleCommand = $('<div/>', { class: 'console-command' }).append($consolePrompt)
 
   return $('<div/>', { class: 'console-command-group' }).hide().append($consoleCommand)
+}
+
+function createCommandOutputHtml(command) {
+  return $('<div/>', { class: 'console-output', text: command.output }).hide()
 }
