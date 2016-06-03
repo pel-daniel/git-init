@@ -69,8 +69,11 @@ function gitAdd() {
   var $file = $('#workingDir > .file')
   var width = $('.area').outerWidth(true)
 
-  $file.animate({ left: width + 'px' }, 700, function() {
-    $file.remove().css('left', 0).appendTo('#staging')
+  return new Promise(function(resolve, reject) {
+    $file.animate({ left: width + 'px' }, 700, function() {
+      $(this).remove().css('left', 0).appendTo('#staging')
+      resolve()
+    })
   })
 }
 
@@ -84,40 +87,52 @@ function gitCommit(payload) {
 
   $staging.empty().append($commit)
 
-  $commit.find('.commit-node').animate(
-    {
-      'border-radius': '50%',
-      height: '22px',
-      width: '22px'
-    },
-    500,
-    function() {
-      var width = $('.area').outerWidth(true)
-      var $commitArea = $('#commit-area')
+  return new Promise(function(resolve, reject) {
+    $commit.find('.commit-node').animate(
+      {
+        'border-radius': '50%',
+        height: '22px',
+        width: '22px'
+      },
+      500,
+      function() {
+        var width = $('.area').outerWidth(true)
+        var $commitArea = $('#commit-area')
 
-      var $spacer = createSpacerHtml()
+        var $spacer = createSpacerHtml()
 
-      $spacer.delay(400).prependTo($commitArea).slideDown(700)
+        $spacer.delay(400).prependTo($commitArea).slideDown(700)
 
-      $commit.delay(400).animate({ left: width + 'px' }, 700, function() {
-        $spacer.remove()
-        $commit.css('left', 0).prependTo($commitArea)
-        $commit.find('.commit-message').delay(400).fadeIn(400)
-      })
-    }
-  )
+        $commit.delay(400).animate({ left: width + 'px' }, 700, function() {
+          $spacer.remove()
+          $(this).css('left', 0).prependTo($commitArea)
+          $(this).find('.commit-message').delay(400).fadeIn(400, function() {
+            resolve()
+          })
+        })
+      }
+    )
+  })
 }
 
 function gitInit() {
+  return new Promise(function(resolve, reject) {
   $('.area').show().animate({ height: '100%' }, 700, function() {
-    $('.area-title').fadeIn(400)
+      $('.area-title').fadeIn(400, function() {
+        resolve()
+      })
+    })
   })
 }
 
 function modifyFile(payload) {
   var $file = createFileHtml(payload.fileName)
   $file.appendTo('#workingDir')
-  $file.fadeIn()
+  return new Promise(function(resolve, reject) {
+    $file.fadeIn(400, function() {
+      resolve()
+    })
+  })
 }
 
 function createFileHtml(fileName) {
