@@ -32,9 +32,9 @@ var commands = [
       hash: commitHash1,
       message: message1
     },
-    output: '[master (root-commit) ' + commitHash1 + '] Add file ' + fileName +
-      '\n 1 file changed, 0 insertions(+), 0 deletions(-)' +
-      '\n create mode 100644 ' + fileName
+    output: '<div>[master (root-commit) ' + commitHash1 + '] Add file ' + fileName +
+      '</div><div> 1 file changed, 0 insertions(+), 0 deletions(-)</div>' +
+      '<div> create mode 100644 ' + fileName + '</div>'
   },
   {
     animation: modifyFile,
@@ -218,5 +218,5 @@ function createCommandGroupHtml() {
 }
 
 function createCommandOutputHtml(command) {
-  return $('<div/>', { class: 'console-output', text: command.output }).hide()
+  return $('<div/>', { class: 'console-output' }).html(command.output).hide()
 }
