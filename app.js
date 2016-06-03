@@ -54,19 +54,39 @@ function animateCommand(command) {
     e.preventDefault()
     e.stopPropagation()
 
-    var $commandGroup = $('.console-command-group:last-child')
-    var $consoleCommand = createCommandHtml(command)
+    // 1. show command in console div
+    // 2. show animation
+    // 3. show command output in console div
+    showCommand(command)
+    .then(function() {
+      return command.animation(command.payload)
+    }).then(function() {
+      return showCommandOutput(command)
+    })
+  }
+}
 
+function showCommand(command) {
+  var $consoleCommand = createCommandHtml(command)
+  var $commandGroup = $('.console-command-group:last-child')
+
+  return new Promise(function(resolve, reject) {
     $consoleCommand.
       appendTo($commandGroup.find('.console-command')).
       fadeIn(400, function() {
-        command.animation(command.payload).then(function() {
-          var $newCommandGroup = createCommandGroupHtml()
-
-          $newCommandGroup.appendTo('.console').fadeIn(400)
-        })
+        resolve()
       })
-  }
+  })
+}
+
+function showCommandOutput(command) {
+  var $newCommandGroup = createCommandGroupHtml()
+
+  return new Promise(function(resolve, reject) {
+    $newCommandGroup.appendTo('.console').fadeIn(400, function() {
+      resolve()
+    })
+  })
 }
 
 function gitAdd() {
