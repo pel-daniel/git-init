@@ -109,7 +109,15 @@ function appendNewPrompt(resolve) {
     delay(400).
     appendTo('.console').
     fadeIn(400, function() {
-      resolve()
+      var $console = $('.console')
+
+      $console.animate(
+        { scrollTop: $console.prop('scrollHeight') - $console.outerHeight() },
+        400,
+        function() {
+          resolve()
+        }
+      )
     })
 }
 
