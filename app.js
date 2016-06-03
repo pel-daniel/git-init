@@ -60,7 +60,11 @@ function animateCommand(command) {
     $consoleCommand.
       appendTo($commandGroup.find('.console-command')).
       fadeIn(400, function() {
-        command.animation(command.payload)
+        command.animation(command.payload).then(function() {
+          var $newCommandGroup = createCommandGroupHtml()
+
+          $newCommandGroup.appendTo('.console').fadeIn(400)
+        })
       })
   }
 }
@@ -156,4 +160,11 @@ function createSpacerHtml() {
 
 function createCommandHtml(command) {
   return $('<span/>', { text: command.command }).hide()
+}
+
+function createCommandGroupHtml() {
+  var $consolePrompt = $('<span/>', { class: 'console-prompt', text: '>' })
+  var $consoleCommand = $('<div/>', { class: 'console-command' }).append($consolePrompt)
+
+  return $('<div/>', { class: 'console-command-group' }).hide().append($consoleCommand)
 }
