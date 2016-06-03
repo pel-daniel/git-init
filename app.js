@@ -91,7 +91,6 @@ function showCommandOutput(command) {
       var $commandOutput = createCommandOutputHtml(command)
 
       $commandOutput.
-        delay(400).
         appendTo($commandGroup).
         fadeIn(400, function() {
           appendNewPrompt(resolve)
@@ -106,7 +105,6 @@ function appendNewPrompt(resolve) {
   var $newCommandGroup = createCommandGroupHtml()
 
   $newCommandGroup.
-    delay(400).
     appendTo('.console').
     fadeIn(400, function() {
       var $console = $('.console')
