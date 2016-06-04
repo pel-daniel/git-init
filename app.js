@@ -1,7 +1,7 @@
 var currentStep = 1
 
 $(function() {
-  $('.command-trigger').click(animateCommand)
+  $('.instructions').on('click', '.command-trigger:not(.animating)', animateCommand)
 })
 
 function animateCommand(e) {
@@ -41,6 +41,7 @@ function animateCommand(e) {
     }
   }
 
+  $(this).addClass('animating')
   e.preventDefault()
   e.stopPropagation()
   var command = $.extend(
@@ -59,7 +60,7 @@ function animateCommand(e) {
   }).then(function() {
     return showCommandOutput(command)
   }).then(function() {
-    return showInstructionsNextStep(command)
+    return showInstructionsNextStep()
   }).catch(function() {
     return new Promise(function(resolve, reject) {
       appendNewPrompt(resolve)
@@ -102,6 +103,7 @@ function showInstructionsNextStep() {
   return new Promise(function(resolve, reject) {
     $('#step' + currentStep).fadeOut(400, function() {
       $('#step' + ++currentStep).fadeIn(400, function() {
+        $(this).removeClass('hidden')
         resolve()
       })
     })

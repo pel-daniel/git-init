@@ -59,6 +59,10 @@ div {
   padding: 3px;
 }
 
+.command-trigger.animating {
+  cursor: progress;
+}
+
 .commit {
   border-left: 3px solid darkcyan;
   margin-left: 11px;
