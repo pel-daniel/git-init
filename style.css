@@ -1,0 +1,135 @@
+html, body, .container {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+body {
+  background-color: lightgray;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  padding-left: 400px;
+  padding-top: 73px;
+  width: 100%;
+}
+
+#header {
+  background-color: white;
+  border-bottom: 2px solid #303030;
+  left: 0;
+  height: 70px;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#side-bar {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  top: 70px;
+  width: 400px;
+}
+
+.area {
+  background-color: white;
+  border: 2px solid #303030;
+  display: inline-block;
+  float: left;
+  height: 0%;
+  margin-left: 3px;
+  padding: 20px;
+  width: 33%;
+}
+
+.area-title {
+  border-bottom: 2px solid #303030;
+  color: #303030;
+  margin: 0;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.command-trigger {
+  background-color: green;
+  cursor: pointer;
+  display: inline-block;
+  padding: 3px;
+}
+
+.command-trigger.animating {
+  cursor: progress;
+}
+
+.commit {
+  border-left: 3px solid darkcyan;
+  margin-left: 11px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.commit:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.commit:last-child {
+  border-left: 3px solid rgba(0, 0, 0, 0);
+}
+
+.commit-message {
+  margin: 0;
+  margin-left: 12px;
+}
+
+.commit-node {
+  background-color: darkcyan;
+  display: inline-block;
+  float: left;
+  left: -12px;
+  position: relative;
+}
+
+.console {
+  background-color: black;
+  color: white;
+  height: 50%;
+  overflow-y: auto;
+  padding: 5px;
+  width: 100%;
+}
+
+.file {
+  background-color: mediumseagreen;
+  line-height: 30px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.hidden {
+  display: none;
+}
+
+.header-title {
+  color: #303030;
+  line-height: 48px;
+}
+
+.instructions {
+  height: 50%;
+  padding: 5px;
+  width: 100%;
+}
