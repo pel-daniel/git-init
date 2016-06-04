@@ -1,77 +1,67 @@
-var fileName = 'tasks.txt'
-var message1 = 'Add file ' + fileName
-var commitHash1 = 'cc04c1f'
-
-var commands = [
-  {
-    animation: gitInit,
-    command: 'git init',
-    $element: '#git-init',
-    output: 'Initialized empty git repository in my_dir/.git/'
-  },
-  {
-    animation: modifyFile,
-    command: 'touch ' + fileName,
-    $element: '#touch',
-    payload: {
-      fileName: fileName
-    },
-    output: null
-  },
-  {
-    animation: gitAdd,
-    command: 'git add ' + fileName,
-    $element: '#git-add',
-    output: null
-  },
-  {
-    animation: gitCommit,
-    command: 'git commit -m "' + message1 + '"',
-    $element: '#git-commit',
-    payload: {
-      hash: commitHash1,
-      message: message1
-    },
-    output: '<div>[master (root-commit) ' + commitHash1 + '] Add file ' + fileName +
-      '</div><div> 1 file changed, 0 insertions(+), 0 deletions(-)</div>' +
-      '<div> create mode 100644 ' + fileName + '</div>'
-  },
-  {
-    animation: modifyFile,
-    command: 'echo "Buy milk!" >> ' + fileName,
-    $element: '#echo',
-    payload: {
-      fileName: fileName
-    },
-    output: null
-  }
-]
+var currentStep = 1
 
 $(function() {
-  commands.forEach(function(c) {
-    $(c.$element).click(animateCommand(c))
-  })
+  $('.command-trigger').click(animateCommand)
 })
 
-function animateCommand(command) {
-  return function(e) {
-    e.preventDefault()
-    e.stopPropagation()
+function animateCommand(e) {
+  var fileName = 'tasks.txt'
+  var message1 = 'Add file ' + fileName
+  var commitHash1 = 'cc04c1f'
 
-    // 1. show command in console div
-    // 2. show animation
-    // 3. show command output in console div
-    showCommand(command)
-    .then(function() {
-      return command.animation(command.payload)
-    }).then(function() {
-      return showCommandOutput(command)
-    }).catch(function() {
-      return new Promise(function(resolve, reject) {
-        appendNewPrompt(resolve)
-      })
-    })
+  var commands = {
+    1: {
+      animation: gitInit,
+      output: 'Initialized empty git repository in my_dir/.git/'
+    },
+    2: {
+      animation: modifyFile,
+      payload: {
+        fileName: fileName
+      }
+    },
+    3: {
+      animation: gitAdd
+    },
+    4: {
+      animation: gitCommit,
+      payload: {
+        hash: commitHash1,
+        message: message1
+      },
+      output: '<div>[master (root-commit) ' + commitHash1 + '] Add file ' + fileName +
+        '</div><div> 1 file changed, 0 insertions(+), 0 deletions(-)</div>' +
+        '<div> create mode 100644 ' + fileName + '</div>'
+    },
+    5: {
+      animation: modifyFile,
+      payload: {
+        fileName: fileName
+      }
+    }
   }
+
+  e.preventDefault()
+  e.stopPropagation()
+  var command = $.extend(
+    {},
+    commands[$(this).data('id')],
+    { command: $(this).text().trim() }
+  )
+
+  // 1. show command in console div
+  // 2. show animation
+  // 3. show command output in console div
+  showCommand(command)
+  .then(function() {
+    return command.animation(command.payload)
+  }).then(function() {
+    return showCommandOutput(command)
+  }).catch(function() {
+    return new Promise(function(resolve, reject) {
+      appendNewPrompt(resolve)
+    })
+  })
 }
 
 function showCommand(command) {
