@@ -8,6 +8,8 @@ function animateCommand(e) {
   var fileName = 'tasks.txt'
   var message1 = 'Add file ' + fileName
   var commitHash1 = 'cc04c1f'
+  var message2 = 'Add first task'
+  var commitHash2 = 'ff5dac2'
 
   var commands = {
     1: {
@@ -29,7 +31,7 @@ function animateCommand(e) {
         hash: commitHash1,
         message: message1
       },
-      output: '<div>[master (root-commit) ' + commitHash1 + '] Add file ' + fileName +
+      output: '<div>[master (root-commit) ' + commitHash1 + '] ' + message1 +
         '</div><div> 1 file changed, 0 insertions(+), 0 deletions(-)</div>' +
         '<div> create mode 100644 ' + fileName + '</div>'
     },
@@ -38,6 +40,18 @@ function animateCommand(e) {
       payload: {
         fileName: fileName
       }
+    },
+    6: {
+      animation: gitAdd
+    },
+    7: {
+      animation: gitCommit,
+      payload: {
+        hash: commitHash2,
+        message: message2
+      },
+      output: '<div>[master ' + commitHash2 + '] ' + message2 +
+        '</div><div> 1 file changed, 1 insertions(+)</div>'
     }
   }
 
