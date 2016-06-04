@@ -52,11 +52,14 @@ function animateCommand(e) {
   // 1. show command in console div
   // 2. show animation
   // 3. show command output in console div
+  // 4. show next step of instructions
   showCommand(command)
   .then(function() {
     return command.animation(command.payload)
   }).then(function() {
     return showCommandOutput(command)
+  }).then(function() {
+    return showInstructionsNextStep(command)
   }).catch(function() {
     return new Promise(function(resolve, reject) {
       appendNewPrompt(resolve)
@@ -92,6 +95,16 @@ function showCommandOutput(command) {
     } else {
       appendNewPrompt(resolve)
     }
+  })
+}
+
+function showInstructionsNextStep() {
+  return new Promise(function(resolve, reject) {
+    $('#step' + currentStep).fadeOut(400, function() {
+      $('#step' + ++currentStep).fadeIn(400, function() {
+        resolve()
+      })
+    })
   })
 }
 

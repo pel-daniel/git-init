@@ -17,27 +17,27 @@
   <div class="container">
     <div id="side-bar">
       <div class="instructions">
-        <div class="current-step" data-step="1">
+        <div id="step1">
           <a id="git-init" class="command-trigger" data-id="1">
             git init
           </a>
         </div>
-        <div class="hidden" data-step="2">
+        <div class="hidden" id="step2">
           <a id="touch" class="command-trigger" data-id="2">
             touch tasks.txt
           </a>
         </div>
-        <div class="hidden" data-step="3">
+        <div class="hidden" id="step3">
           <a id="git-add" class="command-trigger" data-id="3">
             git add tasks.txt
           </a>
         </div>
-        <div class="hidden" data-step="4">
+        <div class="hidden" id="step4">
           <a id="git-commit" class="command-trigger" data-id="4">
             git commit -m "Add file tasks.txt"
           </a>
         </div>
-        <div class="hidden" data-step="5">
+        <div class="hidden" id="step5">
           <a id="echo" class="command-trigger" data-id="5">
             echo "Buy milk!" &gt;&gt; tasks.txt
           </a>
