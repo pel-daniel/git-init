@@ -5,19 +5,28 @@ html, body, .container {
   width: 100%;
 }
 
+body {
+  background-color: lightgray;
+}
+
 div {
   box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
 }
 
 #app {
   height: 100%;
   padding-left: 400px;
-  padding-top: 70px;
+  padding-top: 73px;
   width: 100%;
 }
 
 #header {
-  background-color: lightgray;
+  background-color: white;
+  border-bottom: 2px solid #303030;
   left: 0;
   height: 70px;
   padding: 10px;
@@ -35,11 +44,12 @@ div {
 }
 
 .area {
+  background-color: white;
   border: 2px solid #303030;
   display: inline-block;
   float: left;
   height: 0%;
-  margin-right: 3px;
+  margin-left: 3px;
   padding: 20px;
   width: 33%;
 }
@@ -111,6 +121,11 @@ div {
 
 .hidden {
   display: none;
+}
+
+.header-title {
+  color: #303030;
+  line-height: 48px;
 }
 
 .instructions {
