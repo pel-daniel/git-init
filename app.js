@@ -115,8 +115,8 @@ function showCommandOutput(command) {
 
 function showInstructionsNextStep() {
   return new Promise(function(resolve, reject) {
-    $('#step' + currentStep).fadeOut(400, function() {
-      $('#step' + ++currentStep).fadeIn(400, function() {
+    $('.instructions > .step' + currentStep).fadeOut(400, function() {
+      $('.instructions > .step' + ++currentStep).fadeIn(400, function() {
         $(this).removeClass('hidden')
         resolve()
       })
