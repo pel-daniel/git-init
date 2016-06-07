@@ -13,8 +13,7 @@ function animateCommand(e) {
 
   var commands = {
     1: {
-      animation: gitInit,
-      output: 'Initialized empty git repository in my_dir/.git/'
+      animation: gitInit
     },
     2: {
       animation: modifyFile,
@@ -30,10 +29,7 @@ function animateCommand(e) {
       payload: {
         hash: commitHash1,
         message: message1
-      },
-      output: '<div>[master (root-commit) ' + commitHash1 + '] ' + message1 +
-        '</div><div> 1 file changed, 0 insertions(+), 0 deletions(-)</div>' +
-        '<div> create mode 100644 ' + fileName + '</div>'
+      }
     },
     5: {
       animation: modifyFile,
@@ -49,9 +45,7 @@ function animateCommand(e) {
       payload: {
         hash: commitHash2,
         message: message2
-      },
-      output: '<div>[master ' + commitHash2 + '] ' + message2 +
-        '</div><div> 1 file changed, 1 insertions(+)</div>'
+      }
     }
   }
 
@@ -74,6 +68,8 @@ function animateCommand(e) {
   }).then(function() {
     return showCommandOutput(command)
   }).then(function() {
+    return showNextPrompt()
+  }).then(function() {
     return showInstructionsNextStep()
   }).catch(function() {
     return new Promise(function(resolve, reject) {
@@ -83,33 +79,54 @@ function animateCommand(e) {
 }
 
 function showCommand(command) {
-  var $consoleCommand = createCommandHtml(command)
-  var $commandGroup = $('.console-command-group:last-child .console-command')
+  var $consoleCommand = $('.console > .step' + currentStep + ' > .console-bash-command')
 
   return new Promise(function(resolve, reject) {
     $consoleCommand.
-      appendTo($commandGroup).
+      text(command.command).
       fadeIn(400, function() {
+        $(this).removeClass('hidden')
         resolve()
       })
   })
 }
 
 function showCommandOutput(command) {
-  var $commandGroup = $('.console-command-group:last-child .console-command')
+  var $commandGroup = $('.console > .step' + currentStep)
 
   return new Promise(function(resolve, reject) {
-    if(command.output) {
-      var $commandOutput = createCommandOutputHtml(command)
+    var $commandOutput = $commandGroup.find('.console-output')
+
+    if($commandOutput.length == 1) {
 
       $commandOutput.
-        appendTo($commandGroup).
         fadeIn(400, function() {
-          appendNewPrompt(resolve)
+          $(this).removeClass('hidden')
+          resolve()
         })
     } else {
-      appendNewPrompt(resolve)
+      resolve()
     }
+  })
+}
+
+function showNextPrompt() {
+  return new Promise(function(resolve, reject) {
+    var $consoleCommand = $('.console > .step' + (currentStep + 1) + ' > .console-prompt')
+
+    $consoleCommand.
+      fadeIn(400, function() {
+        $(this).removeClass('hidden')
+        var $console = $('.console')
+
+        $console.animate(
+          { scrollTop: $console.prop('scrollHeight') - $console.outerHeight() },
+          400,
+          function() {
+            resolve()
+          }
+        )
+      })
   })
 }
 
@@ -122,24 +139,6 @@ function showInstructionsNextStep() {
       })
     })
   })
-}
-
-function appendNewPrompt(resolve) {
-  var $newCommandGroup = createCommandGroupHtml()
-
-  $newCommandGroup.
-    appendTo('.console').
-    fadeIn(400, function() {
-      var $console = $('.console')
-
-      $console.animate(
-        { scrollTop: $console.prop('scrollHeight') - $console.outerHeight() },
-        400,
-        function() {
-          resolve()
-        }
-      )
-    })
 }
 
 function gitAdd() {
@@ -243,19 +242,4 @@ function createCommitHtml(payload, height, width) {
 
 function createSpacerHtml() {
   return $('<div/>', { height: 32 }).hide()
-}
-
-function createCommandHtml(command) {
-  return $('<span/>', { text: command.command }).hide()
-}
-
-function createCommandGroupHtml() {
-  var $consolePrompt = $('<span/>', { class: 'console-prompt', text: '>' })
-  var $consoleCommand = $('<div/>', { class: 'console-command' }).append($consolePrompt)
-
-  return $('<div/>', { class: 'console-command-group' }).hide().append($consoleCommand)
-}
-
-function createCommandOutputHtml(command) {
-  return $('<div/>', { class: 'console-output' }).html(command.output).hide()
 }
