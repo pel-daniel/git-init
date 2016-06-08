@@ -123,6 +123,7 @@ h1 {
 .console {
   background-color: black;
   border: 5px solid lightgray;
+  border-radius: 10px;
   color: white;
   height: 50%;
   overflow-y: auto;
@@ -141,8 +142,22 @@ h1 {
   display: none;
 }
 
+.header-github {
+  color: #303030;
+  float: right;
+  line-height: 48px;
+  right: 0;
+  top: 0;
+  transition: color 300ms;
+}
+
+.header-github:hover {
+  color: black;
+}
+
 .header-title {
   color: #303030;
+  display: inline-block;
   line-height: 48px;
 }
 
