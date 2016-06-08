@@ -6,10 +6,14 @@ $(function() {
 
 function animateCommand(e) {
   var fileName = 'tasks.txt'
-  var message1 = 'Add file ' + fileName
-  var commitHash1 = 'cc04c1f'
-  var message2 = 'Add first task'
-  var commitHash2 = 'ff5dac2'
+  var payload1 = {
+    hash: 'cc04c1f',
+    message: 'Add file ' + fileName
+  }
+  var payload2 = {
+    hash: 'ff5dac2',
+    message: 'Add first task'
+  }
 
   var commands = {
     1: {
@@ -26,10 +30,7 @@ function animateCommand(e) {
     },
     4: {
       animation: gitCommit,
-      payload: {
-        hash: commitHash1,
-        message: message1
-      }
+      payload: payload1
     },
     5: {
       animation: modifyFile,
@@ -42,10 +43,7 @@ function animateCommand(e) {
     },
     7: {
       animation: gitCommit,
-      payload: {
-        hash: commitHash2,
-        message: message2
-      }
+      payload: payload2
     }
   }
 
