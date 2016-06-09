@@ -1,5 +1,3 @@
-var currentStep = 1
-
 $(function() {
   $('.instructions').on('click', '.command-trigger:not(.animating)', animateCommand)
 })
@@ -47,13 +45,15 @@ function animateCommand(e) {
     }
   }
 
+  var commandId = $(this).data('id')
   $(this).addClass('animating')
+
   e.preventDefault()
   e.stopPropagation()
   var command = $.extend(
     {},
-    commands[$(this).data('id')],
-    { command: $(this).text().trim() }
+    commands[commandId],
+    { command: $(this).text().trim(), id: commandId }
   )
 
   // 1. show command in console div
@@ -66,9 +66,9 @@ function animateCommand(e) {
   }).then(function() {
     return showCommandOutput(command)
   }).then(function() {
-    return showNextPrompt()
+    return showNextPrompt(command)
   }).then(function() {
-    return showInstructionsNextStep()
+    return showInstructionsNextStep(command)
   }).catch(function() {
     return new Promise(function(resolve, reject) {
       appendNewPrompt(resolve)
@@ -77,7 +77,7 @@ function animateCommand(e) {
 }
 
 function showCommand(command) {
-  var $consoleCommand = $('.console > .step' + currentStep + ' > .console-bash-command')
+  var $consoleCommand = $('.console > .step' + command.id + ' > .console-bash-command')
 
   return new Promise(function(resolve, reject) {
     $consoleCommand.
@@ -90,7 +90,7 @@ function showCommand(command) {
 }
 
 function showCommandOutput(command) {
-  var $commandGroup = $('.console > .step' + currentStep)
+  var $commandGroup = $('.console > .step' + command.id)
 
   return new Promise(function(resolve, reject) {
     var $commandOutput = $commandGroup.find('.console-output')
@@ -107,9 +107,9 @@ function showCommandOutput(command) {
   })
 }
 
-function showNextPrompt() {
+function showNextPrompt(command) {
   return new Promise(function(resolve, reject) {
-    var $consoleCommand = $('.console > .step' + (currentStep + 1) + ' > .console-prompt')
+    var $consoleCommand = $('.console > .step' + (command.id + 1) + ' > .console-prompt')
 
     $consoleCommand.
       fadeIn(400, function() {
@@ -127,10 +127,10 @@ function showNextPrompt() {
   })
 }
 
-function showInstructionsNextStep() {
+function showInstructionsNextStep(command) {
   return new Promise(function(resolve, reject) {
-    $('.instructions > .step' + currentStep).fadeOut(400, function() {
-      $('.instructions > .step' + ++currentStep).fadeIn(400, function() {
+    $('.instructions > .step' + command.id).fadeOut(400, function() {
+      $('.instructions > .step' + (command.id + 1)).fadeIn(400, function() {
         $(this).removeClass('hidden')
         resolve()
       })
