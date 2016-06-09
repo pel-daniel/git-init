@@ -96,7 +96,6 @@ function showCommandOutput(command) {
     var $commandOutput = $commandGroup.find('.console-output')
 
     if($commandOutput.length == 1) {
-
       $commandOutput.
         fadeIn(400, function() {
           $(this).removeClass('hidden')
@@ -148,10 +147,14 @@ function gitAdd() {
   }
 
   return new Promise(function(resolve, reject) {
-    $file.animate({ left: width + 'px' }, 700, function() {
-      $(this).remove().css('left', 0).appendTo('#staging')
-      resolve()
-    })
+    $file.animate(
+      { 'background-color': '#388e3c', left: width + 'px' },
+      700,
+      function() {
+        $(this).remove().css('left', 0).appendTo('#staging')
+        resolve()
+      }
+    )
   })
 }
 
