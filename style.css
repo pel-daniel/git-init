@@ -132,10 +132,24 @@ h1 {
 }
 
 .file {
-  background-color: mediumseagreen;
-  line-height: 30px;
+  background-color: #d32f2f;
+  border-radius: 4px;
+  color: white;
+  line-height: 32px;
   margin-bottom: 10px;
+  padding: 5px 8px;
   position: relative;
+}
+
+.file-icon {
+  font-size: 26px;
+  vertical-align: middle;
+}
+
+.file-name {
+  font-size: 20px;
+  margin-left: 7px;
+  vertical-align: middle;
 }
 
 .hidden {

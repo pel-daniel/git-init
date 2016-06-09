@@ -220,7 +220,13 @@ function modifyFile(payload) {
 }
 
 function createFileHtml(fileName) {
-  return $('<div/>', { class: 'file', text: fileName }).hide()
+  var $icon = $('<span/>', { class: 'file-icon octicon octicon-file-text' })
+  var $fileName = $('<span/>', { class: 'file-name', text: fileName })
+
+  return $('<div/>', { class: 'file' }).
+    append($icon).
+    append($fileName).
+    hide()
 }
 
 function createCommitHtml(payload, height, width) {
