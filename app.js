@@ -203,7 +203,7 @@ function gitCommit(payload) {
 
 function gitInit() {
   return new Promise(function(resolve, reject) {
-  $('.area').removeClass('hidden').animate({ height: '100%' }, 700, function() {
+    $('.area').removeClass('hidden').animate({ height: '100%' }, 700, function() {
       $('.area-title').fadeIn(400, function() {
         $(this).removeClass('hidden')
         resolve()
