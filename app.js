@@ -37,9 +37,12 @@ function animateCommand(e) {
       }
     },
     6: {
-      animation: gitAdd
+      animation: gitStatus
     },
     7: {
+      animation: gitAdd
+    },
+    8: {
       animation: gitCommit,
       payload: payload2
     }
@@ -209,6 +212,23 @@ function gitInit() {
         resolve()
       })
     })
+  })
+}
+
+function gitStatus() {
+  return new Promise(function(resolve, reject) {
+    $('#workingDir, #staging').parent().animate(
+      {
+        'background-color': '#b8dbe6',
+        'border-color': 'black',
+        'box-shadow': '3px 3px #303030',
+        'color': 'black'
+      },
+      700,
+      function() {
+        resolve()
+      }
+    )
   })
 }
 
