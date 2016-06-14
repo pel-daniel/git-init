@@ -1,4 +1,5 @@
 $(function() {
+  $('.next-step').click(showNextStep)
   $('.instructions').on('click', '.command-trigger:not(.animating)', animateCommand)
 })
 
@@ -48,7 +49,7 @@ function animateCommand(e) {
     }
   }
 
-  var commandId = $(this).data('id')
+  var commandId = $(this).closest('.step').data('id')
   $(this).addClass('animating')
 
   e.preventDefault()
@@ -140,10 +141,19 @@ function showLinkToNextStep(command) {
   })
 }
 
-function showInstructionsNextStep(command) {
+function showNextStep(e) {
+  e.preventDefault()
+  e.stopPropagation()
+
+  var commandId = $(this).closest('.step').data('id')
+
+  showInstructionsNextStep(commandId)
+}
+
+function showInstructionsNextStep(commandId) {
   return new Promise(function(resolve, reject) {
-    $('.instructions > .step' + command.id).fadeOut(400, function() {
-      $('.instructions > .step' + (command.id + 1)).fadeIn(400, function() {
+    $('.instructions > .step' + commandId).fadeOut(400, function() {
+      $('.instructions > .step' + (commandId + 1)).fadeIn(400, function() {
         $(this).removeClass('hidden')
         resolve()
       })
