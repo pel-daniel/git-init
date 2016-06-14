@@ -88,11 +88,18 @@ h1 {
   transition: box-shadow 250ms, margin 250ms;
 }
 
-.command-trigger.animating {
+.command-trigger.animating, .command-trigger.animated {
   box-shadow: 0 0 gray;
-  cursor: progress;
   margin-left: 5px;
   margin-top: 5px;
+}
+
+.command-trigger.animated {
+  cursor: default;
+}
+
+.command-trigger.animating {
+  cursor: progress;
 }
 
 .commit {

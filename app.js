@@ -57,14 +57,15 @@ function animateCommand(e) {
   var command = $.extend(
     {},
     commands[commandId],
-    { command: $(this).text().trim(), id: commandId }
+    { command: $(this).text().trim(), $element: $(this), id: commandId }
   )
 
   // 1. show command in console div
   // 2. show animation
   // 3. show command output in console div
   // 4. show the next prompt in console div
-  // 5. show link to the next step in instructions div
+  // 5. remove progress cursor from command
+  // 6. show link to the next step in instructions div
   showCommand(command)
   .then(function() {
     return command.animation(command.payload)
@@ -72,6 +73,8 @@ function animateCommand(e) {
     return showCommandOutput(command)
   }).then(function() {
     return showNextPrompt(command)
+  }).then(function () {
+    return removeProgressCursor(command)
   }).then(function() {
     return showLinkToNextStep(command)
   }).catch(function() {
@@ -129,6 +132,13 @@ function showNextPrompt(command) {
           }
         )
       })
+  })
+}
+
+function removeProgressCursor(command) {
+  return new Promise(function(resolve, reject) {
+    command.$element.toggleClass('animating animated')
+    resolve()
   })
 }
 
