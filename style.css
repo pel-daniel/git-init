@@ -5,6 +5,11 @@ html, body, .container {
   width: 100%;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 body {
   background-color: lightgray;
 }
@@ -77,7 +82,6 @@ h1 {
   border-radius: 4px;
   box-shadow: 5px 5px gray;
   color: #303030;
-  cursor: pointer;
   display: inline-block;
   font-weight: bold;
   padding: 5px;
@@ -179,4 +183,13 @@ h1 {
   height: 50%;
   padding: 5px;
   width: 100%;
+}
+
+.next-step {
+  color: #2196f3;
+  transition: color 300ms;
+}
+
+.next-step:hover {
+  color: #0d47a1;
 }

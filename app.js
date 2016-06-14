@@ -62,7 +62,8 @@ function animateCommand(e) {
   // 1. show command in console div
   // 2. show animation
   // 3. show command output in console div
-  // 4. show next step of instructions
+  // 4. show the next prompt in console div
+  // 5. show link to the next step in instructions div
   showCommand(command)
   .then(function() {
     return command.animation(command.payload)
@@ -71,7 +72,7 @@ function animateCommand(e) {
   }).then(function() {
     return showNextPrompt(command)
   }).then(function() {
-    return showInstructionsNextStep(command)
+    return showLinkToNextStep(command)
   }).catch(function() {
     return new Promise(function(resolve, reject) {
       appendNewPrompt(resolve)
@@ -127,6 +128,15 @@ function showNextPrompt(command) {
           }
         )
       })
+  })
+}
+
+function showLinkToNextStep(command) {
+  return new Promise(function(resolve, reject) {
+    $('.instructions > .step' + command.id + ' .next-step').fadeIn(400, function() {
+      $(this).removeClass('hidden')
+      resolve()
+    })
   })
 }
 
