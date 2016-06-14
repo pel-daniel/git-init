@@ -1,59 +1,61 @@
+var fileName = 'tasks.txt'
+var payload1 = {
+  hash: 'cc04c1f',
+  message: 'Add file ' + fileName
+}
+var payload2 = {
+  hash: 'ff5dac2',
+  message: 'Add first task'
+}
+
+var commands = {
+  1: {
+    animation: gitInit
+  },
+  2: {
+    animation: modifyFile,
+    payload: {
+      fileName: fileName
+    }
+  },
+  3: {
+    animation: gitAdd
+  },
+  4: {
+    animation: gitCommit,
+    payload: payload1
+  },
+  5: {
+    animation: modifyFile,
+    payload: {
+      fileName: fileName
+    }
+  },
+  6: {
+    animation: gitStatus,
+    defaultState: gitStatusDefaultState
+  },
+  7: {
+    animation: gitAdd
+  },
+  8: {
+    animation: gitCommit,
+    payload: payload2
+  }
+}
+
 $(function() {
-  $('.next-step').click(showNextStep)
+  $('.next-step').click(transitionToNextStep)
   $('.instructions').on('click', '.command-trigger:not(.animating)', animateCommand)
 })
 
 function animateCommand(e) {
-  var fileName = 'tasks.txt'
-  var payload1 = {
-    hash: 'cc04c1f',
-    message: 'Add file ' + fileName
-  }
-  var payload2 = {
-    hash: 'ff5dac2',
-    message: 'Add first task'
-  }
-
-  var commands = {
-    1: {
-      animation: gitInit
-    },
-    2: {
-      animation: modifyFile,
-      payload: {
-        fileName: fileName
-      }
-    },
-    3: {
-      animation: gitAdd
-    },
-    4: {
-      animation: gitCommit,
-      payload: payload1
-    },
-    5: {
-      animation: modifyFile,
-      payload: {
-        fileName: fileName
-      }
-    },
-    6: {
-      animation: gitStatus
-    },
-    7: {
-      animation: gitAdd
-    },
-    8: {
-      animation: gitCommit,
-      payload: payload2
-    }
-  }
+  e.preventDefault()
+  e.stopPropagation()
 
   var commandId = $(this).closest('.step').data('id')
   $(this).addClass('animating')
 
-  e.preventDefault()
-  e.stopPropagation()
   var command = $.extend(
     {},
     commands[commandId],
@@ -151,16 +153,23 @@ function showLinkToNextStep(command) {
   })
 }
 
-function showNextStep(e) {
+function transitionToNextStep(e) {
   e.preventDefault()
   e.stopPropagation()
 
   var commandId = $(this).closest('.step').data('id')
+  var command = commands[commandId]
 
-  showInstructionsNextStep(commandId)
+  var returnToDefault = command.defaultState ?
+    command.defaultState() :
+    Promise.resolve()
+
+  returnToDefault.then(function() {
+    showNextStep(commandId)
+  })
 }
 
-function showInstructionsNextStep(commandId) {
+function showNextStep(commandId) {
   return new Promise(function(resolve, reject) {
     $('.instructions > .step' + commandId).fadeOut(400, function() {
       $('.instructions > .step' + (commandId + 1)).fadeIn(400, function() {
@@ -251,8 +260,23 @@ function gitStatus() {
       {
         'background-color': '#b8dbe6',
         'border-color': 'black',
-        'box-shadow': '3px 3px #303030',
         'color': 'black'
+      },
+      700,
+      function() {
+        resolve()
+      }
+    )
+  })
+}
+
+function gitStatusDefaultState() {
+  return new Promise(function(resolve, reject) {
+    $('#workingDir, #staging').parent().animate(
+      {
+        'background-color': 'white',
+        'border-color': '#303030',
+        'color': '#303030'
       },
       700,
       function() {
