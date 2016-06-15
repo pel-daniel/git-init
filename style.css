@@ -96,6 +96,7 @@ h1 {
 
 .command-trigger.animated {
   cursor: default;
+  opacity: 0.6;
 }
 
 .command-trigger.animating {
