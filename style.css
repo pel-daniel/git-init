@@ -143,6 +143,18 @@ h1 {
   width: 100%;
 }
 
+.console-indented-output {
+  margin-left: 20px;
+}
+
+.console-indented2-output {
+  margin: 10px 55px;
+}
+
+.console-red-output {
+  color: red;
+}
+
 .file {
   background-color: #d32f2f;
   border-radius: 4px;
