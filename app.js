@@ -47,6 +47,10 @@ var commands = {
     defaultState: gitStatusDefaultState
   },
   10: {
+    animation: gitDiffCached,
+    defaultState: gitDiffCachedDefaultState,
+  },
+  11: {
     animation: gitCommit,
     payload: payload2
   }
@@ -266,6 +270,30 @@ function gitDiff() {
 function gitDiffDefaultState() {
   return new Promise(function(resolve, reject) {
     $('#workingDir').parent().animate(
+      areaDefaultCss(),
+      700,
+      function() {
+        resolve()
+      }
+    )
+  })
+}
+
+function gitDiffCached() {
+  return new Promise(function(resolve, reject) {
+    $('#staging').parent().animate(
+      areaHighlightCss(),
+      700,
+      function() {
+        resolve()
+      }
+    )
+  })
+}
+
+function gitDiffCachedDefaultState() {
+  return new Promise(function(resolve, reject) {
+    $('#staging').parent().animate(
       areaDefaultCss(),
       700,
       function() {

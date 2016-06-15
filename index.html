@@ -96,6 +96,14 @@
         </div>
         <div class="hidden step step10" data-id="10">
           <a class="command-trigger">
+            git diff --cached
+          </a>
+          <div>
+            <a class="next-step hidden">Next</a>
+          </div>
+        </div>
+        <div class="hidden step step11" data-id="11">
+          <a class="command-trigger">
             git commit -m "Add first task"
           </a>
           <div>
@@ -188,11 +196,23 @@
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
           <div class="console-output hidden">
+            <div>diff &ndash;&ndash;git a/tasks.txt b/tasks.txt</div>
+            <div>index e69de29..557fb5d 100644</div>
+            <div>&ndash;&ndash;&ndash; a/tasks.txt</div>
+            <div>+++ b/tasks.txt</div>
+            <div class="console-blue-output">@@ -0,0 +1 @@</div>
+            <div class="console-green-output">+&ndash; Buy milk!</div>
+          </div>
+        </div>
+        <div class="console-command-group step11">
+          <span class="console-prompt hidden">&gt;</span>
+          <span class="console-bash-command"></span>
+          <div class="console-output hidden">
             <div>[master <span>ff5dac2</span>] <span>Add first task</span></div>
             <div> 1 file changed, 1 insertions(+)</div>
           </div>
         </div>
-        <div class="console-command-group step11">
+        <div class="console-command-group step12">
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
         </div>
