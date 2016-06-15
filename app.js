@@ -36,9 +36,13 @@ var commands = {
     defaultState: gitStatusDefaultState
   },
   7: {
-    animation: gitAdd
+    animation: gitDiff,
+    defaultState: gitDiffDefaultState
   },
   8: {
+    animation: gitAdd
+  },
+  9: {
     animation: gitCommit,
     payload: payload2
   }
@@ -243,6 +247,30 @@ function gitCommit(payload) {
   })
 }
 
+function gitDiff() {
+  return new Promise(function(resolve, reject) {
+    $('#workingDir').parent().animate(
+      areaHighlightCss(),
+      700,
+      function() {
+        resolve()
+      }
+    )
+  })
+}
+
+function gitDiffDefaultState() {
+  return new Promise(function(resolve, reject) {
+    $('#workingDir').parent().animate(
+      areaDefaultCss(),
+      700,
+      function() {
+        resolve()
+      }
+    )
+  })
+}
+
 function gitInit() {
   return new Promise(function(resolve, reject) {
     $('.area').removeClass('hidden').animate({ height: '100%' }, 700, function() {
@@ -257,11 +285,7 @@ function gitInit() {
 function gitStatus() {
   return new Promise(function(resolve, reject) {
     $('#workingDir, #staging').parent().animate(
-      {
-        'background-color': '#b8dbe6',
-        'border-color': 'black',
-        'color': 'black'
-      },
+      areaHighlightCss(),
       700,
       function() {
         resolve()
@@ -273,11 +297,7 @@ function gitStatus() {
 function gitStatusDefaultState() {
   return new Promise(function(resolve, reject) {
     $('#workingDir, #staging').parent().animate(
-      {
-        'background-color': 'white',
-        'border-color': '#303030',
-        'color': '#303030'
-      },
+      areaDefaultCss(),
       700,
       function() {
         resolve()
@@ -323,4 +343,20 @@ function createCommitHtml(payload, height, width) {
 
 function createSpacerHtml() {
   return $('<div/>', { height: 32 }).hide()
+}
+
+function areaHighlightCss() {
+  return {
+    'background-color': '#b8dbe6',
+    'border-color': 'black',
+    'color': 'black'
+  }
+}
+
+function areaDefaultCss() {
+  return {
+    'background-color': 'white',
+    'border-color': '#303030',
+    'color': '#303030'
+  }
 }

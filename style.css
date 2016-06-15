@@ -85,7 +85,7 @@ h1 {
   display: inline-block;
   font-weight: bold;
   padding: 5px;
-  transition: box-shadow 250ms, margin 250ms;
+  transition: box-shadow 250ms, margin 250ms, opacity 250ms;
 }
 
 .command-trigger.animating, .command-trigger.animated {
@@ -150,6 +150,14 @@ h1 {
 
 .console-indented2-output {
   margin: 10px 55px;
+}
+
+.console-cyan-output {
+  color: cyan;
+}
+
+.console-green-output {
+  color: green;
 }
 
 .console-red-output {

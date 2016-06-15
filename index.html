@@ -72,13 +72,21 @@
         </div>
         <div class="hidden step step7" data-id="7">
           <a class="command-trigger">
-            git add tasks.txt
+            git diff
           </a>
           <div>
             <a class="next-step hidden">Next</a>
           </div>
         </div>
         <div class="hidden step step8" data-id="8">
+          <a class="command-trigger">
+            git add tasks.txt
+          </a>
+          <div>
+            <a class="next-step hidden">Next</a>
+          </div>
+        </div>
+        <div class="hidden step step9" data-id="9">
           <a class="command-trigger">
             git commit -m "Add first task"
           </a>
@@ -128,7 +136,7 @@
               (use "git add &lt;file&gt;..." to update what will be committed)
             </div>
             <div class="console-indented-output">
-              (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+              (use "git checkout &ndash;&ndash; &lt;file&gt;..." to discard changes in working directory)
             </div>
             <div class="console-indented2-output console-red-output">
               modified: tasks.txt
@@ -141,8 +149,20 @@
         <div class="console-command-group step7">
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
+          <div class="console-output hidden">
+            <div>diff &ndash;&ndash;git a/tasks.txt b/tasks.txt</div>
+            <div>index e69de29..557fb5d 100644</div>
+            <div>&ndash;&ndash;&ndash; a/tasks.txt</div>
+            <div>+++ b/tasks.txt</div>
+            <div class="console-blue-output">@@ -0,0 +1 @@</div>
+            <div class="console-green-output">+&ndash; Buy milk!</div>
+          </div>
         </div>
         <div class="console-command-group step8">
+          <span class="console-prompt hidden">&gt;</span>
+          <span class="console-bash-command"></span>
+        </div>
+        <div class="console-command-group step9">
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
           <div class="console-output hidden">
@@ -150,7 +170,7 @@
             <div> 1 file changed, 1 insertions(+)</div>
           </div>
         </div>
-        <div class="console-command-group step9">
+        <div class="console-command-group step10">
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
         </div>
