@@ -48,11 +48,15 @@ var commands = {
   },
   10: {
     animation: gitDiffCached,
-    defaultState: gitDiffCachedDefaultState,
+    defaultState: gitDiffCachedDefaultState
   },
   11: {
     animation: gitCommit,
     payload: payload2
+  },
+  12: {
+    animation: gitLog,
+    defaultState: gitLogDefaultState
   }
 }
 
@@ -311,6 +315,31 @@ function gitInit() {
         resolve()
       })
     })
+  })
+}
+
+function gitLog() {
+  return new Promise(function(resolve, reject) {
+    $('#commit-area').parent().animate(
+      areaHighlightCss(),
+      700,
+      function() {
+        resolve()
+      }
+    )
+  })
+
+}
+
+function gitLogDefaultState() {
+  return new Promise(function(resolve, reject) {
+    $('#commit-area').parent().animate(
+      areaDefaultCss(),
+      700,
+      function() {
+        resolve()
+      }
+    )
   })
 }
 
