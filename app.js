@@ -43,6 +43,10 @@ var commands = {
     animation: gitAdd
   },
   9: {
+    animation: gitStatus,
+    defaultState: gitStatusDefaultState
+  },
+  10: {
     animation: gitCommit,
     payload: payload2
   }

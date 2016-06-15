@@ -88,6 +88,14 @@
         </div>
         <div class="hidden step step9" data-id="9">
           <a class="command-trigger">
+            git status
+          </a>
+          <div>
+            <a class="next-step hidden">Next</a>
+          </div>
+        </div>
+        <div class="hidden step step10" data-id="10">
+          <a class="command-trigger">
             git commit -m "Add first task"
           </a>
           <div>
@@ -166,11 +174,25 @@
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
           <div class="console-output hidden">
+            <div>On branch master</div>
+            <div>Changes to be commited:</div>
+            <div class="console-indented-output">
+              (use "git reset HEAD &lt;file&gt;..." to unstage)
+            </div>
+            <div class="console-indented2-output console-green-output">
+              modified: tasks.txt
+            </div>
+          </div>
+        </div>
+        <div class="console-command-group step10">
+          <span class="console-prompt hidden">&gt;</span>
+          <span class="console-bash-command"></span>
+          <div class="console-output hidden">
             <div>[master <span>ff5dac2</span>] <span>Add first task</span></div>
             <div> 1 file changed, 1 insertions(+)</div>
           </div>
         </div>
-        <div class="console-command-group step10">
+        <div class="console-command-group step11">
           <span class="console-prompt hidden">&gt;</span>
           <span class="console-bash-command"></span>
         </div>
