@@ -197,7 +197,7 @@ function showNextStep(commandId) {
 }
 
 function gitAdd() {
-  var $file = $('#workingDir > .file')
+  var $file = $('#working-dir > .file')
   var width = $('.area').outerWidth(true)
 
   if($file.length == 0) {
@@ -261,7 +261,7 @@ function gitCommit(payload) {
 
 function gitDiff() {
   return new Promise(function(resolve, reject) {
-    $('#workingDir').parent().animate(
+    $('#working-dir').parent().animate(
       areaHighlightCss(),
       700,
       function() {
@@ -273,7 +273,7 @@ function gitDiff() {
 
 function gitDiffDefaultState() {
   return new Promise(function(resolve, reject) {
-    $('#workingDir').parent().animate(
+    $('#working-dir').parent().animate(
       areaDefaultCss(),
       700,
       function() {
@@ -345,7 +345,7 @@ function gitLogDefaultState() {
 
 function gitStatus() {
   return new Promise(function(resolve, reject) {
-    $('#workingDir, #staging').parent().animate(
+    $('#working-dir, #staging').parent().animate(
       areaHighlightCss(),
       700,
       function() {
@@ -357,7 +357,7 @@ function gitStatus() {
 
 function gitStatusDefaultState() {
   return new Promise(function(resolve, reject) {
-    $('#workingDir, #staging').parent().animate(
+    $('#working-dir, #staging').parent().animate(
       areaDefaultCss(),
       700,
       function() {
@@ -369,7 +369,7 @@ function gitStatusDefaultState() {
 
 function modifyFile(payload) {
   var $file = createFileHtml(payload.fileName)
-  $file.appendTo('#workingDir')
+  $file.appendTo('#working-dir')
   return new Promise(function(resolve, reject) {
     $file.fadeIn(400, function() {
       resolve()
