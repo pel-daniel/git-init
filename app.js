@@ -241,7 +241,7 @@ function gitCommit(payload) {
       500,
       function() {
         var width = $('.area').outerWidth(true)
-        var $commitArea = $('#commit-area')
+        var $commitArea = $('#local-repository')
 
         var $spacer = createSpacerHtml()
 
@@ -320,7 +320,7 @@ function gitInit() {
 
 function gitLog() {
   return new Promise(function(resolve, reject) {
-    $('#commit-area').parent().animate(
+    $('#local-repository').parent().animate(
       areaHighlightCss(),
       700,
       function() {
@@ -333,7 +333,7 @@ function gitLog() {
 
 function gitLogDefaultState() {
   return new Promise(function(resolve, reject) {
-    $('#commit-area').parent().animate(
+    $('#local-repository').parent().animate(
       areaDefaultCss(),
       700,
       function() {
