@@ -95,10 +95,8 @@ function animateCommand(e) {
     return removeProgressCursor(command)
   }).then(function() {
     return showLinkToNextStep(command)
-  }).catch(function() {
-    return new Promise(function(resolve, reject) {
-      appendNewPrompt(resolve)
-    })
+  }).catch(function(error) {
+    console.log(error)
   })
 }
 
