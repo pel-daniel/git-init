@@ -5,6 +5,11 @@ html, body, .container {
   width: 100%;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 body {
   background-color: lightgray;
 }
@@ -18,15 +23,18 @@ h1 {
 }
 
 #app {
-  height: 100%;
-  padding-left: 400px;
-  padding-top: 73px;
-  width: 100%;
+  border: 5px solid rgba(0, 0, 0, 0);
+  bottom: 0;
+  left: 400px;
+  position: absolute;
+  right: 0;
+  top: 70px;
 }
 
 #header {
   background-color: white;
   border-bottom: 2px solid #303030;
+  border-radius: 0 0 4px 4px;
   left: 0;
   height: 70px;
   padding: 10px;
@@ -46,27 +54,49 @@ h1 {
 .area {
   background-color: white;
   border: 2px solid #303030;
+  border-radius: 8px;
+  box-shadow: 3px 3px gray;
+  color: #303030;
   display: inline-block;
   float: left;
   height: 0%;
-  margin-left: 3px;
+  margin-right: 5px;
   padding: 20px;
-  width: 33%;
+  width: calc((100% - 10px) / 3);
+}
+
+.area:last-child {
+  margin-right: 0;
 }
 
 .area-title {
   border-bottom: 2px solid #303030;
-  color: #303030;
   margin: 0;
   margin-bottom: 10px;
   padding-bottom: 5px;
 }
 
 .command-trigger {
-  background-color: green;
-  cursor: pointer;
+  background-color: white;
+  border: 1px solid #303030;
+  border-radius: 4px;
+  box-shadow: 5px 5px gray;
+  color: #303030;
   display: inline-block;
-  padding: 3px;
+  font-weight: bold;
+  padding: 5px;
+  transition: box-shadow 250ms, margin 250ms, opacity 250ms;
+}
+
+.command-trigger.animating, .command-trigger.animated {
+  box-shadow: 0 0 gray;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.command-trigger.animated {
+  cursor: default;
+  opacity: 0.6;
 }
 
 .command-trigger.animating {
@@ -105,6 +135,8 @@ h1 {
 
 .console {
   background-color: black;
+  border: 5px solid lightgray;
+  border-radius: 10px;
   color: white;
   height: 50%;
   overflow-y: auto;
@@ -112,19 +144,70 @@ h1 {
   width: 100%;
 }
 
+.console-indented-output {
+  margin-left: 20px;
+}
+
+.console-indented2-output {
+  margin: 10px 55px;
+}
+
+.console-cyan-output {
+  color: cyan;
+}
+
+.console-green-output {
+  color: green;
+}
+
+.console-red-output {
+  color: red;
+}
+
+.console-yellow-output {
+  color: yellow;
+}
+
 .file {
-  background-color: mediumseagreen;
-  line-height: 30px;
+  background-color: #d32f2f;
+  border-radius: 4px;
+  color: white;
   margin-bottom: 10px;
+  padding: 5px 8px;
   position: relative;
+}
+
+.file-icon {
+  font-size: 26px;
+  vertical-align: middle;
+}
+
+.file-name {
+  font-size: 20px;
+  margin-left: 7px;
+  vertical-align: middle;
 }
 
 .hidden {
   display: none;
 }
 
+.header-github {
+  color: #303030;
+  float: right;
+  line-height: 48px;
+  right: 0;
+  top: 0;
+  transition: color 300ms;
+}
+
+.header-github:hover {
+  color: black;
+}
+
 .header-title {
   color: #303030;
+  display: inline-block;
   line-height: 48px;
 }
 
@@ -132,4 +215,13 @@ h1 {
   height: 50%;
   padding: 5px;
   width: 100%;
+}
+
+.next-step {
+  color: #2196f3;
+  transition: color 300ms;
+}
+
+.next-step:hover {
+  color: #0d47a1;
 }
