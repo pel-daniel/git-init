@@ -225,3 +225,29 @@ h1 {
 .next-step:hover {
   color: #0d47a1;
 }
+
+
+/*
+  cheatsheet
+*/
+
+#cheatsheet-app {
+  border: 5px solid rgba(0, 0, 0, 0);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 70px;
+}
+
+#cheatsheet-app > .area {
+  height: 100%;
+  width: 250px;
+}
+
+#details {
+  bottom: 0;
+  left: 770px;
+  position: fixed;
+  top: 70px;
+  width: calc(100% - 770px);
+}
