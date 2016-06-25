@@ -263,3 +263,54 @@ h1 {
   top: 70px;
   width: calc(100% - 770px);
 }
+
+#arrow-git-add {
+  top: 85px;
+  left: 140px;
+}
+
+#arrow-git-add > .arrow-body {
+  background-color: #388e3c;
+}
+
+.arrow-body {
+  background-color: white;
+  border: 2px solid #303030;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.arrow-head {
+  bottom: 73px;
+  height: 65px;
+  left: 121px;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 65px;
+  z-index: -1;
+}
+
+.arrow-hinder {
+  border-right: 2px solid #303030;
+  background-color: white;
+  height: 20px;
+  left: 125px;
+  position: relative;
+  width: 25px;
+}
+
+.arrow-shaft {
+  border-right: white;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.arrow-wrapper {
+  min-width: 150px;
+  position: absolute;
+  z-index: 50;
+}
