@@ -272,8 +272,12 @@ h1 {
   top: 10px;
 }
 
-#arrow-git-add > .arrow-body {
+#arrow-git-add > .arrow-head {
   background-color: #388e3c;
+}
+
+#arrow-git-add > .arrow-shaft {
+  background: linear-gradient(to right, #d32f2f 60%, #388e3c 85%);
 }
 
 #arrow-git-commit {
@@ -281,8 +285,12 @@ h1 {
   top: 10px;
 }
 
-#arrow-git-commit > .arrow-body {
+#arrow-git-commit > .arrow-head {
   background-color: darkcyan;
+}
+
+#arrow-git-commit > .arrow-shaft {
+  background: linear-gradient(to right, #388e3c 40%, darkcyan 75%);
 }
 
 #arrow-git-commit-a {
@@ -290,8 +298,12 @@ h1 {
   width: 535px;
 }
 
-#arrow-git-commit-a > .arrow-body {
+#arrow-git-commit-a > .arrow-head {
   background-color: darkcyan;
+}
+
+#arrow-git-commit-a > .arrow-shaft {
+  background: linear-gradient(to right, #d32f2f 25%, #388e3c 40%, #388e3c 75%, darkcyan 90%);
 }
 
 #arrow-git-reset-head {
@@ -299,16 +311,24 @@ h1 {
   top: 130px;
 }
 
-#arrow-git-reset-head > .arrow-body {
+#arrow-git-reset-head > .arrow-head {
   background-color: #D32F2F;
+}
+
+#arrow-git-reset-head > .arrow-shaft {
+  background: linear-gradient(to left, #388e3c 40%, #d32f2f 75%);
 }
 
 #arrow-git-reset-soft {
   top: 211px;
 }
 
-#arrow-git-reset-soft > .arrow-body {
+#arrow-git-reset-soft > .arrow-head {
   background-color: #388e3c;
+}
+
+#arrow-git-reset-soft > .arrow-shaft {
+  background: linear-gradient(to left, darkcyan 60%, #388e3c 85%);
 }
 
 .arrow-body {
