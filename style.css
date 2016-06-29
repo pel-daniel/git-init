@@ -277,6 +277,7 @@ h1 {
 }
 
 #arrow-git-commit {
+  left: 110px;
   top: 10px;
 }
 
@@ -286,7 +287,7 @@ h1 {
 
 #arrow-git-commit-a {
   top: 30px;
-  width: 415px;
+  width: 535px;
 }
 
 #arrow-git-commit-a > .arrow-body {
@@ -294,11 +295,20 @@ h1 {
 }
 
 #arrow-git-reset-head {
+  right: 148px;
   top: 130px;
 }
 
 #arrow-git-reset-head > .arrow-body {
   background-color: #D32F2F;
+}
+
+#arrow-git-reset-soft {
+  top: 211px;
+}
+
+#arrow-git-reset-soft > .arrow-body {
+  background-color: #388e3c;
 }
 
 .arrow-body {
@@ -334,7 +344,7 @@ h1 {
 .arrow-wrapper {
   display: inline-block;
   position: relative;
-  width: 160px;
+  width: 230px;
   z-index: 50;
 }
 
@@ -343,7 +353,7 @@ h1 {
 }
 
 .arrow-left {
-  right: 68px;
+  right: 97px;
 }
 
 .arrow-left > .arrow-head {
@@ -361,7 +371,7 @@ h1 {
 }
 
 .arrow-right {
-  left: 140px;
+  left: 60px;
 }
 
 .arrow-right > .arrow-head {
