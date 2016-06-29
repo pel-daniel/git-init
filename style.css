@@ -256,6 +256,10 @@ h1 {
   width: 250px;
 }
 
+#cheatsheet-app .area-container {
+  position: relative;
+}
+
 #details {
   bottom: 0;
   left: 770px;
@@ -280,6 +284,15 @@ h1 {
   background-color: darkcyan;
 }
 
+#arrow-git-commit-a {
+  top: 50px;
+  width: 405px;
+}
+
+#arrow-git-commit-a > .arrow-body {
+  background-color: darkcyan;
+}
+
 .arrow-body {
   background-color: white;
   border: 2px solid #303030;
@@ -289,10 +302,10 @@ h1 {
 }
 
 .arrow-head {
-  bottom: 73px;
   height: 65px;
-  left: 126px;
-  position: relative;
+  position: absolute;
+  right: -36px;
+  top: 8px;
   transform: rotate(-45deg);
   width: 65px;
   z-index: -1;
@@ -301,9 +314,8 @@ h1 {
 .arrow-hinder {
   border-right: 2px solid #303030;
   background-color: white;
+  float: right;
   height: 20px;
-  left: 130px;
-  position: relative;
   width: 25px;
 }
 
@@ -314,6 +326,7 @@ h1 {
   font-size: 20px;
   padding: 5px 10px;
   text-align: center;
+  width: 100%;
 }
 
 .arrow-wrapper {
@@ -321,4 +334,8 @@ h1 {
   position: relative;
   width: 155px;
   z-index: 50;
+}
+
+.arrow-wrapper > div {
+  display: inline-block;
 }
