@@ -265,8 +265,7 @@ h1 {
 }
 
 #arrow-git-add {
-  top: 85px;
-  left: 140px;
+  top: 10px;
 }
 
 #arrow-git-add > .arrow-body {
@@ -274,8 +273,7 @@ h1 {
 }
 
 #arrow-git-commit {
-  top: 85px;
-  left: 410px;
+  top: 10px;
 }
 
 #arrow-git-commit > .arrow-body {
@@ -319,7 +317,8 @@ h1 {
 }
 
 .arrow-wrapper {
-  min-width: 155px;
-  position: absolute;
+  left: 140px;
+  position: relative;
+  width: 155px;
   z-index: 50;
 }
