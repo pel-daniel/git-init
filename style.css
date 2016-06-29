@@ -285,12 +285,20 @@ h1 {
 }
 
 #arrow-git-commit-a {
-  top: 50px;
-  width: 405px;
+  top: 30px;
+  width: 415px;
 }
 
 #arrow-git-commit-a > .arrow-body {
   background-color: darkcyan;
+}
+
+#arrow-git-reset-head {
+  top: 130px;
+}
+
+#arrow-git-reset-head > .arrow-body {
+  background-color: #D32F2F;
 }
 
 .arrow-body {
@@ -304,7 +312,6 @@ h1 {
 .arrow-head {
   height: 65px;
   position: absolute;
-  right: -36px;
   top: 8px;
   transform: rotate(-45deg);
   width: 65px;
@@ -312,17 +319,12 @@ h1 {
 }
 
 .arrow-hinder {
-  border-right: 2px solid #303030;
   background-color: white;
-  float: right;
   height: 20px;
   width: 25px;
 }
 
 .arrow-shaft {
-  border-right: white;
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
   font-size: 20px;
   padding: 5px 10px;
   text-align: center;
@@ -331,12 +333,48 @@ h1 {
 
 .arrow-wrapper {
   display: inline-block;
-  left: 140px;
   position: relative;
-  width: 155px;
+  width: 160px;
   z-index: 50;
 }
 
 .arrow-wrapper > div {
   display: inline-block;
+}
+
+.arrow-left {
+  right: 68px;
+}
+
+.arrow-left > .arrow-head {
+  left: -36px;
+}
+
+.arrow-left > .arrow-hinder {
+  border-left: 2px solid #303030;
+}
+
+.arrow-left > .arrow-shaft {
+  border-left: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.arrow-right {
+  left: 140px;
+}
+
+.arrow-right > .arrow-head {
+  right: -36px;
+}
+
+.arrow-right > .arrow-hinder {
+  border-right: 2px solid #303030;
+  float: right;
+}
+
+.arrow-right > .arrow-shaft {
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
