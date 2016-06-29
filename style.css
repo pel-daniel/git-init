@@ -273,6 +273,15 @@ h1 {
   background-color: #388e3c;
 }
 
+#arrow-git-commit {
+  top: 85px;
+  left: 410px;
+}
+
+#arrow-git-commit > .arrow-body {
+  background-color: darkcyan;
+}
+
 .arrow-body {
   background-color: white;
   border: 2px solid #303030;
@@ -284,7 +293,7 @@ h1 {
 .arrow-head {
   bottom: 73px;
   height: 65px;
-  left: 121px;
+  left: 126px;
   position: relative;
   transform: rotate(-45deg);
   width: 65px;
@@ -295,7 +304,7 @@ h1 {
   border-right: 2px solid #303030;
   background-color: white;
   height: 20px;
-  left: 125px;
+  left: 130px;
   position: relative;
   width: 25px;
 }
@@ -310,7 +319,7 @@ h1 {
 }
 
 .arrow-wrapper {
-  min-width: 150px;
+  min-width: 155px;
   position: absolute;
   z-index: 50;
 }
