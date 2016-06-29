@@ -330,6 +330,7 @@ h1 {
 }
 
 .arrow-wrapper {
+  display: inline-block;
   left: 140px;
   position: relative;
   width: 155px;
