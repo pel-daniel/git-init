@@ -42,7 +42,7 @@
             <div class="arrow-body arrow-head"></div>
           </div>
 
-          <div id="arrow-git-commit-a" class="arrow-wrapper arrow-right">
+          <div id="arrow-git-commit-a" class="arrow-wrapper arrow-right" data-id="git-commit-a">
             <div class="arrow-hinder"></div>
             <div class="arrow-body arrow-shaft">git commit &ndash;am</div>
             <div class="arrow-hinder"></div>
@@ -106,12 +106,21 @@
         </dl>
       </div>
       <div class="command-details git-commit-details hidden">
-        <h2>git commit -m <span class="details-placeholder">message</span></h2>
+        <h2>git commit &ndash;m <span class="details-placeholder">message</span></h2>
 
         <h3>Description</h3>
         <p>
           Wrap all current changes in staging area into a commit node with the
           message passed as option.
+        </p>
+      </div>
+      <div class="command-details git-commit-a-details hidden">
+        <h2>git commit &ndash;am <span class="details-placeholder">message</span></h2>
+
+        <h3>Description</h3>
+        <p>
+          Wrap all changes of tracked files in workind directory into a commit
+          node with the message passed as option.
         </p>
       </div>
     </div>
