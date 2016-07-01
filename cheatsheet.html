@@ -35,7 +35,7 @@
         <h2 class="area-title">Working directory</h2>
 
         <div class="area-container">
-          <div id="arrow-git-add" class="arrow-wrapper arrow-right">
+          <div id="arrow-git-add" class="arrow-wrapper arrow-right" data-id="git-add">
             <div class="arrow-hinder"></div>
             <div class="arrow-body arrow-shaft">git add</div>
             <div class="arrow-hinder"></div>
@@ -83,7 +83,28 @@
       </div>
     </div>
 
-    <div id="details">
+    <div id="cheatsheet-details">
+      <div class="command-details git-add-details hidden">
+        <h2>git add</h2>
+
+        <h3>Description</h3>
+        <p>Add changes to the staging area</p>
+
+        <h3>Options</h3>
+        <dl>
+          <dt>.</dt>
+          <dd>Add all the files with changes</dd>
+
+          <dt class="details-placeholder">folder</dt>
+          <dd>Add all the changes inside the folder. Including the folder itself.</dd>
+
+          <dt class="details-placeholder">file</dt>
+          <dd>Add all the changes of the file.</dd>
+
+          <dt>&ndash;u</dt>
+          <dd>Add all the changes of the tracked files.</dd>
+        </dl>
+      </div>
     </div>
   </div>
   <script
@@ -95,6 +116,16 @@
     src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
     type="text/javascript">
   </script>
-  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('.arrow-body').click(function() {
+        var id = $(this).parent('.arrow-wrapper').data('id')
+
+        $('.command-details').fadeOut(400, function() {
+          $('.' + id + '-details').fadeIn(700).removeClass('hidden')
+        })
+      })
+    })
+  </script>
 </body>
 </html>
