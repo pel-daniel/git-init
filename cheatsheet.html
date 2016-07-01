@@ -54,7 +54,7 @@
         <h2 class="area-title">Staging area</h2>
 
         <div class="area-container">
-          <div id="arrow-git-commit" class="arrow-wrapper arrow-right">
+          <div id="arrow-git-commit" class="arrow-wrapper arrow-right" data-id="git-commit">
             <div class="arrow-hinder"></div>
             <div class="arrow-body arrow-shaft">git commit &ndash;m</div>
             <div class="arrow-hinder"></div>
@@ -85,7 +85,7 @@
 
     <div id="cheatsheet-details">
       <div class="command-details git-add-details hidden">
-        <h2>git add</h2>
+        <h2>git add <span class="details-placeholder">options</span></h2>
 
         <h3>Description</h3>
         <p>Add changes to the staging area</p>
@@ -96,14 +96,23 @@
           <dd>Add all the files with changes</dd>
 
           <dt class="details-placeholder">folder</dt>
-          <dd>Add all the changes inside the folder. Including the folder itself.</dd>
+          <dd>Add all the changes inside a folder. Including the folder itself.</dd>
 
           <dt class="details-placeholder">file</dt>
-          <dd>Add all the changes of the file.</dd>
+          <dd>Add all the changes in a file.</dd>
 
           <dt>&ndash;u</dt>
           <dd>Add all the changes of the tracked files.</dd>
         </dl>
+      </div>
+      <div class="command-details git-commit-details hidden">
+        <h2>git commit -m <span class="details-placeholder">message</span></h2>
+
+        <h3>Description</h3>
+        <p>
+          Wrap all current changes in staging area into a commit node with the
+          message passed as option.
+        </p>
       </div>
     </div>
   </div>
@@ -120,10 +129,19 @@
     $(function() {
       $('.arrow-body').click(function() {
         var id = $(this).parent('.arrow-wrapper').data('id')
+        var visibleDiv = $('.command-details.visible')
 
-        $('.command-details').fadeOut(400, function() {
-          $('.' + id + '-details').fadeIn(700).removeClass('hidden')
-        })
+        var showDetails = function() {
+          $('.' + id + '-details').fadeIn(700, function() {
+            $(this).toggleClass('hidden visible')
+          })
+        }
+
+        if(visibleDiv.length > 0) {
+          visibleDiv.fadeOut(400, showDetails).removeClass('visible')
+        } else {
+          showDetails()
+        }
       })
     })
   </script>
