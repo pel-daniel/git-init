@@ -73,7 +73,7 @@
         <h2 class="area-title">Local repository</h2>
 
         <div class="area-container">
-          <div id="arrow-git-reset-soft" class="arrow-wrapper arrow-left">
+          <div id="arrow-git-reset-soft" class="arrow-wrapper arrow-left" data-id="git-reset-soft">
             <div class="arrow-hinder"></div>
             <div class="arrow-body arrow-shaft">git reset &ndash;&ndash;soft HEAD~</div>
             <div class="arrow-hinder"></div>
@@ -124,12 +124,25 @@
         </p>
       </div>
       <div class="command-details git-reset-head-details hidden">
-        <h2>git reset HEAD</h2>
+        <h2>git reset HEAD <span class="details-placeholder">options</span></h2>
 
         <h3>Description</h3>
         <p>
-          Remove the changes from the staging area, and keep those changes in
+          Remove the changes from the staging area and keep those changes in
           the working directory.
+        </p>
+        <p>
+          You can pass the same options as
+          <span class="details-placeholder">git add</span> to select which
+          changes you want to remove.
+        </p>
+      </div>
+      <div class="command-details git-reset-soft-details hidden">
+        <h2>git reset &ndash;&ndash;soft HEAD~</h2>
+
+        <h3>Description</h3>
+        <p>
+          Undo last commit. The changes will be kept in the staging area.
         </p>
       </div>
     </div>
