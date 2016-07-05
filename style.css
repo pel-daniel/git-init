@@ -334,14 +334,6 @@ h1 {
   background: linear-gradient(to left, darkcyan 60%, #388e3c 85%);
 }
 
-.arrow-body {
-  background-color: white;
-  border: 2px solid #303030;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}
-
 .arrow-head {
   height: 65px;
   position: absolute;
@@ -358,9 +350,6 @@ h1 {
 }
 
 .arrow-shaft {
-  font-size: 20px;
-  padding: 5px 10px;
-  text-align: center;
   width: 100%;
 }
 
@@ -371,10 +360,6 @@ h1 {
   transition: opacity 300ms;
   width: 230px;
   z-index: 50;
-}
-
-.arrow-selected {
-  opacity: 1;
 }
 
 .arrow-wrapper > div {
@@ -416,6 +401,20 @@ h1 {
   border-right: none;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+}
+
+.button-selected {
+  opacity: 1;
+}
+
+.cheatsheet-trigger {
+  border: 2px solid #303030;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
 }
 
 .details-placeholder {

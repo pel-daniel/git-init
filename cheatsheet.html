@@ -35,18 +35,18 @@
         <h2 class="area-title">Working directory</h2>
 
         <div class="area-container">
-          <div id="arrow-git-add" class="arrow-wrapper arrow-right" data-id="git-add">
+          <div id="arrow-git-add" class="arrow-wrapper arrow-right cheatsheet-button" data-id="git-add">
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-shaft">git add</div>
+            <div class="cheatsheet-trigger arrow-shaft">git add</div>
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-head"></div>
+            <div class="cheatsheet-trigger arrow-head"></div>
           </div>
 
-          <div id="arrow-git-commit-a" class="arrow-wrapper arrow-right" data-id="git-commit-a">
+          <div id="arrow-git-commit-a" class="arrow-wrapper arrow-right cheatsheet-button" data-id="git-commit-a">
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-shaft">git commit &ndash;am</div>
+            <div class="cheatsheet-trigger arrow-shaft">git commit &ndash;am</div>
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-head"></div>
+            <div class="cheatsheet-trigger arrow-head"></div>
           </div>
         </div>
       </div>
@@ -54,18 +54,18 @@
         <h2 class="area-title">Staging area</h2>
 
         <div class="area-container">
-          <div id="arrow-git-commit" class="arrow-wrapper arrow-right" data-id="git-commit">
+          <div id="arrow-git-commit" class="arrow-wrapper arrow-right cheatsheet-button" data-id="git-commit">
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-shaft">git commit &ndash;m</div>
+            <div class="cheatsheet-trigger arrow-shaft">git commit &ndash;m</div>
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-head"></div>
+            <div class="cheatsheet-trigger arrow-head"></div>
           </div>
 
-          <div id="arrow-git-reset-head" class="arrow-wrapper arrow-left" data-id="git-reset-head">
+          <div id="arrow-git-reset-head" class="arrow-wrapper arrow-left cheatsheet-button" data-id="git-reset-head">
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-shaft">git reset HEAD</div>
+            <div class="cheatsheet-trigger arrow-shaft">git reset HEAD</div>
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-head"></div>
+            <div class="cheatsheet-trigger arrow-head"></div>
           </div>
         </div>
       </div>
@@ -73,11 +73,11 @@
         <h2 class="area-title">Local repository</h2>
 
         <div class="area-container">
-          <div id="arrow-git-reset-soft" class="arrow-wrapper arrow-left" data-id="git-reset-soft">
+          <div id="arrow-git-reset-soft" class="arrow-wrapper arrow-left cheatsheet-button" data-id="git-reset-soft">
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-shaft">git reset &ndash;&ndash;soft HEAD~</div>
+            <div class="cheatsheet-trigger arrow-shaft">git reset &ndash;&ndash;soft HEAD~</div>
             <div class="arrow-hinder"></div>
-            <div class="arrow-body arrow-head"></div>
+            <div class="cheatsheet-trigger arrow-head"></div>
           </div>
         </div>
       </div>
@@ -158,9 +158,9 @@
   </script>
   <script type="text/javascript">
     $(function() {
-      $('.arrow-body').click(function() {
-        var arrowWrapper = $(this).parent('.arrow-wrapper')
-        var id = arrowWrapper.data('id')
+      $('.cheatsheet-trigger').click(function() {
+        var button = $(this).parent('.cheatsheet-button')
+        var id = button.data('id')
         var visibleDiv = $('.command-details.visible')
 
         var showDetails = function() {
@@ -169,8 +169,8 @@
           })
         }
 
-        $('.arrow-wrapper.arrow-selected').removeClass('arrow-selected')
-        arrowWrapper.toggleClass('arrow-selected')
+        $('.cheatsheet-button.button-selected').removeClass('button-selected')
+        button.toggleClass('button-selected')
 
         if(visibleDiv.length > 0) {
           visibleDiv.fadeOut(400, showDetails).removeClass('visible')
