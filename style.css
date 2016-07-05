@@ -251,8 +251,8 @@ h1 {
   top: 70px;
 }
 
-#cheatsheet-app > .area {
-  height: 100%;
+#cheatsheet-app .area {
+  height: calc(100% - 87px);
   width: 250px;
 }
 
@@ -355,9 +355,7 @@ h1 {
 
 .arrow-wrapper {
   display: inline-block;
-  opacity: .8;
   position: relative;
-  transition: opacity 300ms;
   width: 230px;
   z-index: 50;
 }
@@ -401,6 +399,26 @@ h1 {
   border-right: none;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+}
+
+.button-area-width {
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  width: calc((100% - 10px) / 3);
+}
+
+.button-area-width:last-child {
+  margin-right: 0;
+}
+
+.button-colored {
+  background-color: #1976d2;
+}
+
+.cheatsheet-button {
+  opacity: .8;
+  transition: opacity 300ms;
 }
 
 .button-selected {
