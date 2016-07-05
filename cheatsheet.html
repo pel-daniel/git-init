@@ -32,6 +32,12 @@
   <div class="container">
     <div id="cheatsheet-app">
       <div>
+        <div class="cheatsheet-button button-area-width-2" data-id="git-status">
+          <div class="cheatsheet-trigger button-colored">git status</div>
+        </div>
+      </div>
+
+      <div>
         <div class="cheatsheet-button button-area-width" data-id="git-diff">
           <div class="cheatsheet-trigger button-colored">git diff</div>
         </div>
@@ -188,13 +194,27 @@
         <h3>Options</h3>
         <dl>
           <dt>––oneline</dt>
-          <dd>Show shortened information, just abbreviated hash and title.</dd>
+          <dd>Output in short format, just show abbreviated hash and title.</dd>
 
           <dt>–p</dt>
           <dd>Show also the diff of the changes.</dd>
 
           <dt>––stat</dt>
           <dd>Show also statistics of adds and removes in each commit.</dd>
+        </dl>
+      </div>
+      <div class="command-details git-status-details hidden">
+        <h2>git status <span class="details-placeholder">options</span></h2>
+
+        <h3>Description</h3>
+        <p>
+          Show the name of the files with changes either working directory or staging area.
+        </p>
+
+        <h3>Options</h3>
+        <dl>
+          <dt>–s</dt>
+          <dd>Output in short format</dd>
         </dl>
       </div>
     </div>

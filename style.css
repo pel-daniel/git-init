@@ -408,6 +408,11 @@ h1 {
   width: calc((100% - 10px) / 3);
 }
 
+.button-area-width-2 {
+  margin-bottom: 5px;
+  width: calc(((100% - 10px) / 3 * 2) + 5px);
+}
+
 .button-area-width:last-child {
   margin-right: 0;
 }
