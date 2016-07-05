@@ -159,7 +159,8 @@
   <script type="text/javascript">
     $(function() {
       $('.arrow-body').click(function() {
-        var id = $(this).parent('.arrow-wrapper').data('id')
+        var arrowWrapper = $(this).parent('.arrow-wrapper')
+        var id = arrowWrapper.data('id')
         var visibleDiv = $('.command-details.visible')
 
         var showDetails = function() {
@@ -167,6 +168,9 @@
             $(this).toggleClass('hidden visible')
           })
         }
+
+        $('.arrow-wrapper.arrow-selected').removeClass('arrow-selected')
+        arrowWrapper.toggleClass('arrow-selected')
 
         if(visibleDiv.length > 0) {
           visibleDiv.fadeOut(400, showDetails).removeClass('visible')

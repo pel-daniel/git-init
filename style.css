@@ -366,9 +366,15 @@ h1 {
 
 .arrow-wrapper {
   display: inline-block;
+  opacity: .8;
   position: relative;
+  transition: opacity 300ms;
   width: 230px;
   z-index: 50;
+}
+
+.arrow-selected {
+  opacity: 1;
 }
 
 .arrow-wrapper > div {
