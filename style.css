@@ -440,6 +440,16 @@ h1 {
   text-align: center;
 }
 
+.details-external-link {
+  color: #151515;
+  vertical-align: super;
+  transition: color 300ms;
+}
+
+.details-external-link:hover {
+  color: #404040;
+}
+
 .details-placeholder {
   font-style: italic;
 }
