@@ -236,7 +236,7 @@
         var visibleDiv = $('.command-details.visible')
 
         var showDetails = function() {
-          $('.' + id + '-details').fadeIn(700, function() {
+          $('.' + id + '-details').fadeIn(400, function() {
             $(this).toggleClass('hidden visible')
           })
         }
@@ -245,7 +245,7 @@
         button.toggleClass('button-selected')
 
         if(visibleDiv.length > 0) {
-          visibleDiv.fadeOut(400, showDetails).removeClass('visible')
+          visibleDiv.fadeOut(300, showDetails).removeClass('visible')
         } else {
           showDetails()
         }
