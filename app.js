@@ -62,7 +62,7 @@ var commands = {
 
 $(function() {
   $('.next-step').click(transitionToNextStep)
-  $('.instructions').on('click', '.command-trigger:not(.animating)', animateCommand)
+  $('.command-trigger:not(.animating)').click(animateCommand)
 })
 
 function animateCommand(e) {
