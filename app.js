@@ -1,12 +1,4 @@
 var fileName = 'tasks.txt'
-var payload1 = {
-  hash: 'cc04c1f',
-  message: 'Add file ' + fileName
-}
-var payload2 = {
-  hash: 'ff5dac2',
-  message: 'Add first task'
-}
 
 var commands = {
   1: {
@@ -23,7 +15,10 @@ var commands = {
   },
   4: {
     animation: gitCommit,
-    payload: payload1
+    payload: {
+      hash: 'cc04c1f',
+      message: 'Add file ' + fileName
+    }
   },
   5: {
     animation: modifyFile,
@@ -52,7 +47,10 @@ var commands = {
   },
   11: {
     animation: gitCommit,
-    payload: payload2
+    payload: {
+      hash: 'ff5dac2',
+      message: 'Add first task'
+    }
   },
   12: {
     animation: gitLog,
