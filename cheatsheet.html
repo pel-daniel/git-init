@@ -1,0 +1,307 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Cheatsheet - git init</title>
+
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans'
+    rel='stylesheet'
+    type='text/css'
+  >
+  <link rel="stylesheet" href="octicons/octicons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="header">
+    <h1 class="header-title">git init</h1>
+    <ul class="header-menu">
+      <li class="header-menu_item">
+        <a href="index.html">Tutorial</a>
+      </li>
+      <li class="header-menu_item header-menu_item-active">
+        Cheatsheet
+      </li>
+      <li class="header-menu_item">
+        <a
+          class="header-github mega-octicon octicon-mark-github"
+          href="https://github.com/pel-daniel/git-init"
+        ></a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div id="cheatsheet-app">
+      <div>
+        <div class="cheatsheet-button button-area-width-2" data-id="git-status">
+          <div class="cheatsheet-trigger button-colored">git status</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="cheatsheet-button button-area-width" data-id="git-diff">
+          <div class="cheatsheet-trigger button-colored">git diff</div>
+        </div>
+        <div class="cheatsheet-button button-area-width" data-id="git-diff-cached">
+          <div class="cheatsheet-trigger button-colored">git diff ––cached</div>
+        </div>
+        <div class="cheatsheet-button button-area-width" data-id="git-log">
+          <div class="cheatsheet-trigger button-colored">git log</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="area">
+          <h2 class="area-title">Working directory</h2>
+
+          <div class="area-container">
+            <div id="arrow-git-add" class="arrow-wrapper arrow-right cheatsheet-button" data-id="git-add">
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-shaft">git add</div>
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-head"></div>
+            </div>
+
+            <div id="arrow-git-commit-a" class="arrow-wrapper arrow-right cheatsheet-button" data-id="git-commit-a">
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-shaft">git commit –am</div>
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-head"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="area">
+          <h2 class="area-title">Staging area</h2>
+
+          <div class="area-container">
+            <div id="arrow-git-commit" class="arrow-wrapper arrow-right cheatsheet-button" data-id="git-commit">
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-shaft">git commit –m</div>
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-head"></div>
+            </div>
+
+            <div id="arrow-git-reset-head" class="arrow-wrapper arrow-left cheatsheet-button" data-id="git-reset-head">
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-shaft">git reset HEAD</div>
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-head"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="area">
+          <h2 class="area-title">Local repository</h2>
+
+          <div class="area-container">
+            <div id="arrow-git-reset-soft" class="arrow-wrapper arrow-left cheatsheet-button" data-id="git-reset-soft">
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-shaft">git reset ––soft HEAD~</div>
+              <div class="arrow-hinder"></div>
+              <div class="cheatsheet-trigger arrow-head"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="cheatsheet-details">
+      <div class="command-details git-add-details hidden">
+        <h2>
+          git add
+          <span class="details-placeholder">options</span>
+          <a href="https://git-scm.com/docs/git-add" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>Add changes to the staging area</p>
+
+        <h3>Options</h3>
+        <dl>
+          <dt>.</dt>
+          <dd>Add all the files with changes</dd>
+
+          <dt class="details-placeholder">folder</dt>
+          <dd>Add all the changes inside a folder. Including the folder itself.</dd>
+
+          <dt class="details-placeholder">file</dt>
+          <dd>Add all the changes in a file.</dd>
+
+          <dt>–u</dt>
+          <dd>Add all the changes of the tracked files.</dd>
+        </dl>
+      </div>
+      <div class="command-details git-commit-details hidden">
+        <h2>
+          git commit –m
+          <span class="details-placeholder">message</span>
+          <a href="https://git-scm.com/docs/git-commit" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Wrap all current changes in staging area into a commit node with the
+          message passed as option.
+        </p>
+      </div>
+      <div class="command-details git-commit-a-details hidden">
+        <h2>
+          git commit –am
+          <span class="details-placeholder">message</span>
+          <a href="https://git-scm.com/docs/git-commit" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Wrap all changes of tracked files in workind directory into a commit
+          node with the message passed as option.
+        </p>
+      </div>
+      <div class="command-details git-reset-head-details hidden">
+        <h2>
+          git reset HEAD
+          <span class="details-placeholder">options</span>
+          <a href="https://git-scm.com/docs/git-reset" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Remove the changes from the staging area and keep those changes in
+          the working directory.
+        </p>
+        <p>
+          You can pass the same options as
+          <span class="details-placeholder">git add</span> to select which
+          changes you want to remove.
+        </p>
+      </div>
+      <div class="command-details git-reset-soft-details hidden">
+        <h2>
+          git reset ––soft HEAD~
+          <a href="https://git-scm.com/docs/git-reset" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Undo last commit. The changes will be kept in the staging area.
+        </p>
+      </div>
+      <div class="command-details git-diff-details hidden">
+        <h2>
+          git diff
+          <a href="https://git-scm.com/docs/git-diff" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Show changes of tracked files in the working directory.
+        </p>
+      </div>
+      <div class="command-details git-diff-cached-details hidden">
+        <h2>
+          git diff ––cached
+          <a href="https://git-scm.com/docs/git-diff" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Show detailed changes of files in the staging area.
+        </p>
+      </div>
+      <div class="command-details git-log-details hidden">
+        <h2>
+          git log
+          <span class="details-placeholder">options</span>
+          <a href="https://git-scm.com/docs/git-log" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Show log of commit nodes.
+        </p>
+
+        <h3>Options</h3>
+        <dl>
+          <dt>––oneline</dt>
+          <dd>Output in short format, just show abbreviated hash and title.</dd>
+
+          <dt>–p</dt>
+          <dd>Show also the diff of the changes.</dd>
+
+          <dt>––stat</dt>
+          <dd>Show also statistics of adds and removes in each commit.</dd>
+        </dl>
+      </div>
+      <div class="command-details git-status-details hidden">
+        <h2>
+          git status
+          <span class="details-placeholder">options</span>
+          <a href="https://git-scm.com/docs/git-status" target="_blank">
+            <span class="details-external-link octicon octicon-link-external"></span>
+          </a>
+        </h2>
+
+        <h3>Description</h3>
+        <p>
+          Show the name of the files with changes either in working directory or staging area.
+        </p>
+
+        <h3>Options</h3>
+        <dl>
+          <dt>–s</dt>
+          <dd>Output in short format</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous">
+  </script>
+  <script
+    src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
+    type="text/javascript">
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      $('.cheatsheet-trigger').click(function() {
+        var button = $(this).parent('.cheatsheet-button')
+        var id = button.data('id')
+        var visibleDiv = $('.command-details.visible')
+
+        var showDetails = function() {
+          $('.' + id + '-details').fadeIn(400, function() {
+            $(this).toggleClass('hidden visible')
+          })
+        }
+
+        $('.cheatsheet-button.button-selected').removeClass('button-selected')
+        button.toggleClass('button-selected')
+
+        if(visibleDiv.length > 0) {
+          visibleDiv.fadeOut(300, showDetails).removeClass('visible')
+        } else {
+          showDetails()
+        }
+      })
+    })
+  </script>
+</body>
+</html>

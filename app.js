@@ -1,12 +1,4 @@
 var fileName = 'tasks.txt'
-var payload1 = {
-  hash: 'cc04c1f',
-  message: 'Add file ' + fileName
-}
-var payload2 = {
-  hash: 'ff5dac2',
-  message: 'Add first task'
-}
 
 var commands = {
   1: {
@@ -23,7 +15,10 @@ var commands = {
   },
   4: {
     animation: gitCommit,
-    payload: payload1
+    payload: {
+      hash: 'cc04c1f',
+      message: 'Add file ' + fileName
+    }
   },
   5: {
     animation: modifyFile,
@@ -52,7 +47,10 @@ var commands = {
   },
   11: {
     animation: gitCommit,
-    payload: payload2
+    payload: {
+      hash: 'ff5dac2',
+      message: 'Add first task'
+    }
   },
   12: {
     animation: gitLog,
@@ -62,7 +60,7 @@ var commands = {
 
 $(function() {
   $('.next-step').click(transitionToNextStep)
-  $('.instructions').on('click', '.command-trigger:not(.animating)', animateCommand)
+  $('.command-trigger:not(.animating)').click(animateCommand)
 })
 
 function animateCommand(e) {
@@ -95,10 +93,8 @@ function animateCommand(e) {
     return removeProgressCursor(command)
   }).then(function() {
     return showLinkToNextStep(command)
-  }).catch(function() {
-    return new Promise(function(resolve, reject) {
-      appendNewPrompt(resolve)
-    })
+  }).catch(function(error) {
+    console.log(error)
   })
 }
 

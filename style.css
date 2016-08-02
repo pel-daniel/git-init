@@ -35,7 +35,9 @@ h1 {
   background-color: white;
   border-bottom: 2px solid #303030;
   border-radius: 0 0 4px 4px;
+  color: #303030;
   left: 0;
+  line-height: 48px;
   height: 70px;
   padding: 10px;
   position: fixed;
@@ -192,23 +194,33 @@ h1 {
   display: none;
 }
 
-.header-github {
-  color: #303030;
+.header-menu {
   float: right;
-  line-height: 48px;
-  right: 0;
-  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.header-menu_item {
+  display: inline;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.header-menu_item-active {
+  color: black;
+}
+
+.header-menu_item > a {
+  color: #303030;
   transition: color 300ms;
 }
 
-.header-github:hover {
+.header-menu_item > a:hover {
   color: black;
 }
 
 .header-title {
-  color: #303030;
   display: inline-block;
-  line-height: 48px;
 }
 
 .instructions {
@@ -224,4 +236,220 @@ h1 {
 
 .next-step:hover {
   color: #0d47a1;
+}
+
+
+/*
+  cheatsheet
+*/
+
+#cheatsheet-app {
+  border: 5px solid rgba(0, 0, 0, 0);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 70px;
+}
+
+#cheatsheet-app .area {
+  height: calc(100% - 95px);
+  width: 250px;
+}
+
+#cheatsheet-app .area-container {
+  position: relative;
+}
+
+#cheatsheet-details {
+  bottom: 0;
+  color: #151515;
+  left: 770px;
+  overflow-y: auto;
+  padding: 0 10px 5px 10px;
+  position: fixed;
+  top: 70px;
+  width: calc(100% - 770px);
+}
+
+#arrow-git-add {
+  top: 10px;
+}
+
+#arrow-git-add > .arrow-head {
+  background-color: #388e3c;
+}
+
+#arrow-git-add > .arrow-shaft {
+  background: linear-gradient(to right, #d32f2f 60%, #388e3c 85%);
+}
+
+#arrow-git-commit {
+  left: 110px;
+  top: 10px;
+}
+
+#arrow-git-commit > .arrow-head {
+  background-color: darkcyan;
+}
+
+#arrow-git-commit > .arrow-shaft {
+  background: linear-gradient(to right, #388e3c 40%, darkcyan 75%);
+}
+
+#arrow-git-commit-a {
+  top: 30px;
+  width: 535px;
+}
+
+#arrow-git-commit-a > .arrow-head {
+  background-color: darkcyan;
+}
+
+#arrow-git-commit-a > .arrow-shaft {
+  background: linear-gradient(to right, #d32f2f 25%, #388e3c 40%, #388e3c 75%, darkcyan 90%);
+}
+
+#arrow-git-reset-head {
+  right: 148px;
+  top: 130px;
+}
+
+#arrow-git-reset-head > .arrow-head {
+  background-color: #D32F2F;
+}
+
+#arrow-git-reset-head > .arrow-shaft {
+  background: linear-gradient(to left, #388e3c 40%, #d32f2f 75%);
+}
+
+#arrow-git-reset-soft {
+  top: 211px;
+}
+
+#arrow-git-reset-soft > .arrow-head {
+  background-color: #388e3c;
+}
+
+#arrow-git-reset-soft > .arrow-shaft {
+  background: linear-gradient(to left, darkcyan 60%, #388e3c 85%);
+}
+
+.arrow-head {
+  height: 65px;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 65px;
+  z-index: -1;
+}
+
+.arrow-hinder {
+  background-color: white;
+  height: 20px;
+  width: 25px;
+}
+
+.arrow-shaft {
+  width: 100%;
+}
+
+.arrow-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 230px;
+  z-index: 50;
+}
+
+.arrow-wrapper > div {
+  display: inline-block;
+}
+
+.arrow-left {
+  right: 97px;
+}
+
+.arrow-left > .arrow-head {
+  left: -36px;
+}
+
+.arrow-left > .arrow-hinder {
+  border-left: 2px solid #303030;
+}
+
+.arrow-left > .arrow-shaft {
+  border-left: none;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.arrow-right {
+  left: 60px;
+}
+
+.arrow-right > .arrow-head {
+  right: -36px;
+}
+
+.arrow-right > .arrow-hinder {
+  border-right: 2px solid #303030;
+  float: right;
+}
+
+.arrow-right > .arrow-shaft {
+  border-right: none;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.button-area-width {
+  float: left;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  width: calc((100% - 10px) / 3);
+}
+
+.button-area-width-2 {
+  margin-bottom: 5px;
+  width: calc(((100% - 10px) / 3 * 2) + 5px);
+}
+
+.button-area-width:last-child {
+  margin-right: 0;
+}
+
+.button-colored {
+  background-color: #1976d2;
+}
+
+.cheatsheet-button {
+  opacity: .8;
+  transition: opacity 300ms;
+}
+
+.button-selected {
+  opacity: 1;
+}
+
+.cheatsheet-trigger {
+  border: 2px solid #303030;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.details-external-link {
+  color: #151515;
+  vertical-align: super;
+  transition: color 300ms;
+}
+
+.details-external-link:hover {
+  color: #404040;
+}
+
+.details-placeholder {
+  font-style: italic;
 }
