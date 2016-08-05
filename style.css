@@ -22,6 +22,20 @@ h1 {
   margin: 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border-bottom: 1px solid gray;
+  padding: 1px 4px;
+  text-align: left;
+}
+
+thead > tr {
+  background-color: gray;
+}
+
 #app {
   border: 5px solid rgba(0, 0, 0, 0);
   bottom: 0;
@@ -225,12 +239,21 @@ h1 {
 
 .instructions {
   height: 50%;
-  padding: 5px;
+  overflow-y: auto;
+  padding: 5px 10px;
   width: 100%;
+}
+
+.instructions-message {
+  background-color: rgba(30, 136, 229, 0.5);
+  border: 2px solid #0D47A1;
+  border-radius: 8px;
+  padding: 0 10px;
 }
 
 .next-step {
   color: #2196f3;
+  margin-left: 10px;
   transition: color 300ms;
 }
 

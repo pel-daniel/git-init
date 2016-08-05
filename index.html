@@ -33,12 +33,85 @@
     <div id="side-bar">
       <div class="instructions">
         <div class="step step1" data-id="1">
+          <h3>1/12 Introduction</h3>
+
+          <div class="instructions-message">
+            <h5>Instructions</h5>
+            <p>
+              Every step in the tutorial starts with a text. At the end of the
+              text will be a button that shows the execution of a git command.
+            </p>
+            <p>
+              After clicking the button 4 events will occur:
+            </p>
+            <ul>
+              <li>In the console (at the bottom left): The command will be added and executed.</li>
+              <li>On the right: An animation will show what the command does.</li>
+              <li>When the animation ends, the console shows the output of the command.</li>
+              <li>At the right of the button will appear a link to go to the next step.</li>
+            </ul>
+          </div>
+
+          <p>
+            The official definition of git is "a distributed version control system".
+            <br/>
+            But what does it means? Let's use an example to explain it.
+          </p>
+          <p>
+            In the next table we have some changes a file went through:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>July 7, 10:00</td>
+                <td>Create file 'tasks.txt'.</td>
+              </tr>
+              <tr>
+                <td>July 7, 10:10</td>
+                <td>Add paragraph to file 'tasks.txt'.</td>
+              </tr>
+              <tr>
+                <td>July 7, 10:20</td>
+                <td>Format the content of 'tasks.txt'.</td>
+              </tr>
+              <tr>
+                <td>…</td>
+                <td>…</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            We can think of every row in the table as a 'version' of the file.
+            So git is a system that helps us track 'versions' or 'changes' of
+            files through time
+            (it is also distributed, but this is a feature for another tutorial).
+          </p>
+
+          <h4>Git basics</h4>
+          <p>
+            To initialize git inside a folder, we use the command <span>git init</span>.
+            After issuing this command git will start tracking changes inside the folder.
+          </p>
+          <p>
+            Internally git have three states (also called areas) that
+            changes can be in: working directory, staging area, or repository.
+          </p>
+          <p>
+            Click the next button to start the animation.
+          </p>
+
           <a class="command-trigger">
             git init
           </a>
-          <div>
-            <a class="next-step hidden">Next</a>
-          </div>
+          <a class="next-step hidden">Next</a>
         </div>
         <div class="hidden step step2" data-id="2">
           <a class="command-trigger">
