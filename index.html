@@ -139,9 +139,9 @@
           <h3>3/12 Adding changes to the staging area</h3>
 
           <p>
-            A change, or a group of changes, we wrap together and tell git to save
-            is called a <span>commit</span>. A <span>commit</span> is created in
-            2 steps. The first one is adding all the changes we want to the
+            A <span>commit</span> is a change, or a group of changes, we wrap
+            together and tell git to save. It is created in 2 steps.
+            The first one is adding all the changes we want to the
             <span>staging area</span>.
           </p>
           <p>
@@ -156,12 +156,28 @@
           <a class="next-step hidden">Next</a>
         </div>
         <div class="hidden step step4" data-id="4">
+          <h3>4/12 Creating our first commit</h3>
+
+          <p>
+            Before, we saw the first of the 2 steps to create a commit.
+          </p>
+          <p>
+            The second step is explicitly telling git to wrap all the changes
+            currently in the staging area in a commit node. We do this with the
+            command <span>git commit</span>.
+          </p>
+          <p>
+            We give each commit a message to easily identify its contents later.
+            To pass a message to <span>git commit</span> we use the option <span>–m</span>.
+          </p>
+          <p>
+            The next command will create our first commit with the message
+            <span>Add file tasks.txt</span>.
+          </p>
           <a class="command-trigger">
             git commit –m "Add file tasks.txt"
           </a>
-          <div>
-            <a class="next-step hidden">Next</a>
-          </div>
+          <a class="next-step hidden">Next</a>
         </div>
         <div class="hidden step step5" data-id="5">
           <a class="command-trigger">
