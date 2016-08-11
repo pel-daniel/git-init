@@ -42,7 +42,7 @@
               text will be a button that shows the execution of a git command.
             </p>
             <p>
-              After clicking the button 4 events will occur:
+              After clicking the button 4 things will happen:
             </p>
             <ul>
               <li>In the console (at the bottom left): The command will be added and executed.</li>
@@ -55,7 +55,7 @@
           <p>
             The official definition of git is "a distributed version control system".
             <br/>
-            But what does it means? Let's use an example to explain it.
+            But what does it mean? Let's use an example to explain it.
           </p>
           <p>
             In the next table we have some changes a file went through:
@@ -98,7 +98,7 @@
           <h4>Git basics</h4>
           <p>
             To initialize git inside a folder, we use the command <span>git init</span>.
-            After issuing this command git will start tracking changes inside the folder.
+            After issuing this command, git will start tracking changes inside the folder.
           </p>
           <p>
             Internally git have three states (also called areas) that
@@ -114,12 +114,26 @@
           <a class="next-step hidden">Next</a>
         </div>
         <div class="hidden step step2" data-id="2">
+          <h3>2/12 First changes</h3>
+
+          <p>
+            The first thing we need, to see git in action, is a file.
+            We can create a new file with the command <span>touch</span> and
+            passing a filename as the first argument (this is a UNIX command not
+            a git one).
+          </p>
+          <p>
+            This command will create the file <span>tasks.txt</span>. In this
+            file we will write some tasks we need to accomplish.
+          </p>
+          <p>
+            The working directory area tracks all changes we make inside the
+            folder. So git will show this new file inside this area.
+          </p>
           <a class="command-trigger">
             touch tasks.txt
           </a>
-          <div>
-            <a class="next-step hidden">Next</a>
-          </div>
+          <a class="next-step hidden">Next</a>
         </div>
         <div class="hidden step step3" data-id="3">
           <a class="command-trigger">
