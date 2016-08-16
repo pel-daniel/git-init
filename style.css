@@ -246,9 +246,9 @@ thead > tr {
 
 .instructions-message {
   background-color: rgba(30, 136, 229, 0.5);
-  border: 2px solid #0D47A1;
+  border: 2px solid rgba(13, 71, 161, 0.9);
   border-radius: 8px;
-  color: #0D47A1;
+  color: rgba(13, 71, 161, 0.8);
   padding: 0 10px;
 }
 

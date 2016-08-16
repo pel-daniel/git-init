@@ -43,10 +43,10 @@
 
             <p>
               Every step in the tutorial starts with a text. At the end of the
-              text will be a button that shows the execution of a git command.
+              text is a button that starts the execution of a git command.
             </p>
             <p>
-              After clicking the button 4 things will happen:
+              After clicking the button 4 things will happen, in the following order:
             </p>
             <ul>
               <li>In the console (at the bottom left): The command will be added and executed.</li>
@@ -58,11 +58,10 @@
 
           <p>
             The official definition of git is "a distributed version control system".
-            <br/>
             But what does it mean? Let's use an example to explain it.
           </p>
           <p>
-            In the next table we have some changes a file went through:
+            In the next table we have some changes we did to a file:
           </p>
 
           <table>
@@ -78,11 +77,11 @@
                 <td>Create file 'tasks.txt'.</td>
               </tr>
               <tr>
-                <td>July 7, 10:10</td>
+                <td>July 7, 10:05</td>
                 <td>Add paragraph to file 'tasks.txt'.</td>
               </tr>
               <tr>
-                <td>July 7, 10:20</td>
+                <td>July 7, 10:10</td>
                 <td>Format the content of 'tasks.txt'.</td>
               </tr>
               <tr>
@@ -93,20 +92,20 @@
           </table>
 
           <p>
-            We can think of every row in the table as a 'version' of the file.
-            So git is a system that helps us track 'versions' or 'changes' of
-            files through time
-            (it is also distributed, but this is a feature for another tutorial).
+            We can think of every row in the table as a <span>version</span> of the file.
+            So git is a system that helps us track <span>versions</span> or
+            <span>changes</span> of files through time (it is also distributed,
+            but that's a feature for another tutorial).
           </p>
 
           <h4>Git basics</h4>
           <p>
             To initialize git inside a folder, we use the command <span>git init</span>.
-            After issuing this command, git will start tracking changes inside the folder.
+            After executing this command, git will start tracking changes inside the folder.
           </p>
           <p>
-            Internally git have three states (also called areas) that
-            changes can be in: working directory, staging area, or repository.
+            Internally git have three states (also called areas) where changes
+            can be in: working directory, staging area, and repository.
           </p>
           <p>
             Click the next button to start the animation.
@@ -128,7 +127,7 @@
           </p>
           <p>
             This command will create the file <span>tasks.txt</span>. In this
-            file we will write a list of tasks we need to do.
+            file we will keep a list of tasks we need to do.
           </p>
           <p>
             The working directory area tracks all changes we make inside the
@@ -144,7 +143,7 @@
 
           <p>
             A <span>commit</span> is a change, or a group of changes, we wrap
-            together and tell git to save. It is created in 2 steps.
+            together and tell git to save. It is created in 2 steps:
             The first one is adding all the changes we want to the
             <span>staging area</span>.
           </p>
@@ -231,8 +230,9 @@
             we can use the command <span>git diff</span>.
           </p>
           <p>
-            In the output of <span>git diff</span> the lines that we added are
-            shown in green, and the lines that we removed are shown in red.
+            In the output of <span>git diff</span>, the lines that we added to
+            the file are shown in green, and the ones that we removed are shown
+            in red.
           </p>
           <a class="command-trigger">
             git diff
