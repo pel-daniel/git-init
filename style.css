@@ -164,12 +164,20 @@ thead > tr {
   width: 100%;
 }
 
+.console-bash-command {
+  color: gray;
+}
+
 .console-indented-output {
   margin-left: 20px;
 }
 
 .console-indented2-output {
   margin: 10px 55px;
+}
+
+.console-prompt {
+  color: #1e90ff;
 }
 
 .console-cyan-output {
