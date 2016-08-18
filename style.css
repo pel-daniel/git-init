@@ -242,6 +242,15 @@ thead > tr {
   width: 100%;
 }
 
+.instructions-link {
+  color: #2196f3;
+  transition: color 300ms;
+}
+
+.instructions-link:hover {
+  color: #0d47a1;
+}
+
 .instructions-message {
   background-color: rgba(30, 136, 229, 0.5);
   border: 2px solid rgba(13, 71, 161, 0.9);
@@ -251,13 +260,7 @@ thead > tr {
 }
 
 .next-step {
-  color: #2196f3;
   margin-left: 10px;
-  transition: color 300ms;
-}
-
-.next-step:hover {
-  color: #0d47a1;
 }
 
 .step {
