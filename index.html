@@ -144,7 +144,7 @@
           <p>
             A <span>commit</span> is a change, or a group of changes, we wrap
             together and tell git to save. It is created in 2 steps:
-            The first one is adding all the changes we want to the
+            the first one is adding all the changes we want to the
             <span>staging area</span>.
           </p>
           <p>
@@ -166,7 +166,7 @@
           </p>
           <p>
             The second step is explicitly telling git to wrap all the changes
-            currently in the staging area in a commit node. We do this with the
+            currently in the staging area into a commit node. We do this with the
             command <span>git commit</span>.
           </p>
           <p>
@@ -212,9 +212,11 @@
           </p>
           <p>
             Look at the output of the command in the console (bottom left).
-            <span>git status</span> will show the file <span>tasks.txt</span>
-            with a modified status because we add a line to it in the last step
-            (all the files inside the working directory are shown in red).
+            <span>git status</span> will tell us that the changes are not staged
+            (this means that the changes are inside the working directory). All the
+            files with changes inside the working directory will be shown in red.
+            And the file <span>tasks.txt</span> has a modified status because we
+            add a line to it in the last step.
           </p>
           <a class="command-trigger">
             git status
@@ -257,12 +259,11 @@
 
           <p>
             We can use the command <span>git status</span> again to see the message
-            git gives us when we have changes staged. Notice that the files inside
-            the staging area are shown in green.
+            git gives us when we have staged changes. The file <span>tasks.txt</span>
+            still appears with a modified status, but the color has changed to green
+            which means the changes are inside the staging area.
           </p>
-          <p>
 
-          </p>
           <a class="command-trigger">
             git status
           </a>
@@ -272,12 +273,12 @@
           <h3>10/13 Detailed changes 2</h3>
 
           <p>
-            We used in step 7 the command <span>git diff</span> to see the detailed
-            list of changes we have in the working directory.
+            In step 7 we used the command <span>git diff</span> to see the
+            detailed list of changes we had inside the working directory.
           </p>
           <p>
-            We can use this same command to see the changes inside the staging area,
-            we just need to pass the option <span>––cached</span> to it.
+            This command can also show the changes inside the staging area, if
+            we pass the option <span>––cached</span> to it.
           </p>
           <p>
             The output has the same color code: the lines that we added are shown
@@ -309,9 +310,9 @@
             This command shows us the commits we have made.
           </p>
           <p>
-            <span>git log</span> has various options to show its output in
-            different formats. We use <span>––oneline</span> to see the output
-            in a short format.
+            <span>git log</span> has various options to show the output with
+            different detail levels. We use the option <span>––oneline</span> to
+            see the output in a short format.
           </p>
           <a class="command-trigger">
             git log ––oneline
@@ -322,16 +323,17 @@
           <h3>13/13 Closing</h3>
 
           <p>
-            This tutorial has all the basic commands you need to start using git.
+            This tutorial has all the basic commands you need to start using git
+            in your personal projects.
           </p>
           <p>
-            There is a lot more to learn about git, here are some links for intermediate
-            and advanced resources.
-            Here is a list with intermediate and advanced resources for git.
+            There is a lot more to learn about git, look at the <span>Resources</span>
+            section for a list of next steps to expand your knowledge of git.
           </p>
           <p>
-            Also each git command has more options. Look at the <span>cheatsheed</span>
-            section for some useful ones.
+            Also you can use the <span>Cheatsheet</span> section as a reference.
+            It has all the commands in this tutorial with explanations for the most
+            used options.
           </p>
         </div>
       </div>
