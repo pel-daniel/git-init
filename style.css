@@ -310,12 +310,22 @@ thead > tr {
 }
 
 #cheatsheet-app .area {
-  height: calc(100% - 95px);
+  height: 100%;
   width: 250px;
 }
 
 #cheatsheet-app .area-container {
   position: relative;
+}
+
+@-moz-document url-prefix() {
+  #cheatsheet-app .area-title {
+    letter-spacing: -1px;
+  }
+}
+
+#cheatsheet-app .areas {
+  height: calc(100% - 95px);
 }
 
 #cheatsheet-details {
