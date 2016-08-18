@@ -239,8 +239,6 @@ thead > tr {
 
 .instructions {
   height: 50%;
-  overflow-y: auto;
-  padding: 5px 10px;
   width: 100%;
 }
 
@@ -260,6 +258,12 @@ thead > tr {
 
 .next-step:hover {
   color: #0d47a1;
+}
+
+.step {
+  height: 100%;
+  overflow-y: auto;
+  padding: 5px 10px;
 }
 
 
