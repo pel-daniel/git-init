@@ -281,6 +281,11 @@ thead > tr {
   padding: 0 10px;
 }
 
+.instructions-step {
+  color: #303030;
+  font-size: 15px;
+}
+
 .next-step {
   margin-left: 10px;
 }
