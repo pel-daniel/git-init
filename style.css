@@ -26,6 +26,10 @@ table {
   border-collapse: collapse;
 }
 
+tbody {
+  color: #202020;
+}
+
 td, th {
   border-bottom: 1px solid gray;
   padding: 1px 4px;
@@ -238,8 +242,18 @@ thead > tr {
 }
 
 .instructions {
+  color: #202020;
   height: 50%;
   width: 100%;
+}
+
+.instructions-term {
+  background-color: #505050;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+  padding: 2px 4px;
+  white-space:nowrap;
 }
 
 .instructions-link {
