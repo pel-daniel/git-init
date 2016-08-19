@@ -1,4 +1,4 @@
-html, body, .container {
+html, .container {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
   margin: 0;
@@ -520,4 +520,42 @@ thead > tr {
 
 .details-placeholder {
   font-style: italic;
+}
+
+
+/*
+  resources
+*/
+
+#resources {
+  background-color: white;
+  border: 2px solid #303030;
+  border-radius: 8px;
+  box-shadow: 3px 3px gray;
+  color: #303030;
+  display: block;
+  margin: 75px auto 0;
+  padding: 20px;
+  width: 800px;
+}
+
+#resources a {
+  color: #2196f3;
+  transition: color 300ms;
+}
+
+#resources a:hover {
+  color: #0d47a1;
+}
+
+#resources h3 {
+  margin-top: 1.5em;
+}
+
+#resources li {
+  margin-bottom: 5px;
+}
+
+#resources ul {
+  padding-left: 20px;
 }
