@@ -1,7 +1,15 @@
 # Git init
 
-Work in progress.
+Resources to learn the basics of git ([link](https://pel-daniel.github.io/git-init)).
+Includes a tutorial, a cheatsheet, and some links to more advanced resources.
 
-This project will be a git tutorial for beginners.
 
-And will also have an interactive cheatsheet with more advanced commands.
+## Tutorial
+
+The tutorial explains the basic git commands through animations. Currently includes
+the commands: init, add, commit, status, diff, log.
+
+
+## Cheatsheet
+
+[![cheatsheet screenshoot](cheatsheet.png)](https://pel-daniel.github.io/git-init/cheatsheet.html)
