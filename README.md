@@ -9,6 +9,8 @@ Includes a tutorial, a cheatsheet, and some links to more advanced resources.
 The tutorial explains the basic git commands through animations. Currently includes
 the commands: init, add, commit, status, diff, log.
 
+[![tutorial screenshoot](tutorial.gif)](https://pel-daniel.github.io/git-init/)
+
 
 ## Cheatsheet
 
