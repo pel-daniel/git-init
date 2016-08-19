@@ -1,4 +1,4 @@
-html, body, .container {
+html, .container {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
   margin: 0;
@@ -20,6 +20,24 @@ div {
 
 h1 {
   margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tbody {
+  color: #202020;
+}
+
+td, th {
+  border-bottom: 1px solid gray;
+  padding: 1px 4px;
+  text-align: left;
+}
+
+thead > tr {
+  background-color: gray;
 }
 
 #app {
@@ -146,12 +164,20 @@ h1 {
   width: 100%;
 }
 
+.console-bash-command {
+  color: gray;
+}
+
 .console-indented-output {
   margin-left: 20px;
 }
 
 .console-indented2-output {
   margin: 10px 55px;
+}
+
+.console-prompt {
+  color: #1e90ff;
 }
 
 .console-cyan-output {
@@ -224,18 +250,50 @@ h1 {
 }
 
 .instructions {
+  color: #202020;
   height: 50%;
-  padding: 5px;
   width: 100%;
 }
 
-.next-step {
+.instructions-term {
+  background-color: #505050;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+  padding: 2px 4px;
+  white-space:nowrap;
+}
+
+.instructions-link {
   color: #2196f3;
   transition: color 300ms;
 }
 
-.next-step:hover {
+.instructions-link:hover {
   color: #0d47a1;
+}
+
+.instructions-message {
+  background-color: rgba(30, 136, 229, 0.5);
+  border: 2px solid rgba(13, 71, 161, 0.9);
+  border-radius: 8px;
+  color: rgba(13, 71, 161, 0.8);
+  padding: 0 10px;
+}
+
+.instructions-step {
+  color: #303030;
+  font-size: 15px;
+}
+
+.next-step {
+  margin-left: 10px;
+}
+
+.step {
+  height: 100%;
+  overflow-y: auto;
+  padding: 5px 10px;
 }
 
 
@@ -252,12 +310,22 @@ h1 {
 }
 
 #cheatsheet-app .area {
-  height: calc(100% - 95px);
+  height: 100%;
   width: 250px;
 }
 
 #cheatsheet-app .area-container {
   position: relative;
+}
+
+@-moz-document url-prefix() {
+  #cheatsheet-app .area-title {
+    letter-spacing: -1px;
+  }
+}
+
+#cheatsheet-app .areas {
+  height: calc(100% - 95px);
 }
 
 #cheatsheet-details {
@@ -452,4 +520,42 @@ h1 {
 
 .details-placeholder {
   font-style: italic;
+}
+
+
+/*
+  resources
+*/
+
+#resources {
+  background-color: white;
+  border: 2px solid #303030;
+  border-radius: 8px;
+  box-shadow: 3px 3px gray;
+  color: #303030;
+  display: block;
+  margin: 75px auto 0;
+  padding: 20px;
+  width: 800px;
+}
+
+#resources a {
+  color: #2196f3;
+  transition: color 300ms;
+}
+
+#resources a:hover {
+  color: #0d47a1;
+}
+
+#resources h3 {
+  margin-top: 1.5em;
+}
+
+#resources li {
+  margin-bottom: 5px;
+}
+
+#resources ul {
+  padding-left: 20px;
 }
